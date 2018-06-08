@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\TaskManager.Contract.ViewModel\TaskManager.Contract.ViewModel.csproj" />
+    <ProjectReference Include="..\TaskManager.ViewModel\TaskManager.ViewModel.csproj" />
+    <ProjectReference Include="..\TaskManager.Contract.Utility\TaskManager.Contract.Utility.csproj" />
+    <ProjectReference Include="..\TaskManager.Utility\TaskManager.Utility.csproj" />
+    <ProjectReference Include="..\TaskManager.Contract.Data\TaskManager.Contract.Data.csproj" />
+    <ProjectReference Include="..\TaskManager.Data.Json\TaskManager.Data.Json.csproj" />
+    <ProjectReference Include="..\TaskManager.Data.Sqlite\TaskManager.Data.Sqlite.csproj" />
+    <ProjectReference Include="..\TaskManager.Contract.Business\TaskManager.Contract.Business.csproj" />
+    <ProjectReference Include="..\TaskManager.Business\TaskManager.Business.csproj" />
+    <ProjectReference Include="..\TaskManager.Models\TaskManager.Models.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>
