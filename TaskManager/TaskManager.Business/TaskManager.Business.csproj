@@ -2,6 +2,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TaskManager.Contract.Business\TaskManager.Contract.Business.csproj" />
+    <ProjectReference Include="..\TaskManager.Contract.Data\TaskManager.Contract.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.dependencyinjection.abstractions\2.1.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <PropertyGroup>
