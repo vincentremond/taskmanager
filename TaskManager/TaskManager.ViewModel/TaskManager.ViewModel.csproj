@@ -1,6 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TaskManager.Contract.Business\TaskManager.Contract.Business.csproj" />
     <ProjectReference Include="..\TaskManager.Contract.ViewModel\TaskManager.Contract.ViewModel.csproj" />
   </ItemGroup>
 
