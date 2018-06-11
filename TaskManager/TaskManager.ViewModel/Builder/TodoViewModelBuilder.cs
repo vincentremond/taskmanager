@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using TaskManager.Contract.Business;
 using TaskManager.Contract.ViewModel.Builder;
 using TaskManager.Contract.ViewModel.Model;

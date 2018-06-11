@@ -7,11 +7,11 @@ using TaskManager.Models;
 
 namespace TaskManager.Data.Json
 {
-    public class TodoRepository : ITodoRepository
+    public class JsonTodoRepository : ITodoRepository
     {
         private static readonly ConcurrentBag<Todo> data;
 
-        static TodoRepository()
+        static JsonTodoRepository()
         {
 
             data = new ConcurrentBag<Todo>();
