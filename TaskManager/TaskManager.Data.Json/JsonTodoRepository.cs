@@ -1,4 +1,5 @@
-﻿using System.Collections.Concurrent;
+﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using TaskManager.Contract.Data;
@@ -15,8 +16,9 @@ namespace TaskManager.Data.Json
 
             data = new ConcurrentDictionary<string, Todo>();
 
-            void AddItem(string todoId, string title, TodoStatus status, int score)
+            void AddItem(int score, TodoStatus status, string title)
             {
+                var todoId = Guid.NewGuid().ToString("N");
                 data[todoId] = new Todo
                 {
                     TodoId = todoId,
@@ -26,9 +28,14 @@ namespace TaskManager.Data.Json
                 };
             };
 
-            AddItem("dda44d8ecbb74b07bcd69ad1599e6a8f", "Task 1", TodoStatus.Active, 10);
-            AddItem("79075496f92148568bb27669cbc7d7c4", "Task 2", TodoStatus.Active, 12);
-            AddItem("243af39779d54d70b8642bdef9b4b7eb", "Task 0", TodoStatus.Completed, 13);
+            var index = 100;
+            AddItem(--index, TodoStatus.Active, "Todo has a creation date");
+            AddItem(--index, TodoStatus.Active, "Todo has a modification date");
+            AddItem(--index, TodoStatus.Active, "Todo is a draft before being active");
+            AddItem(--index, TodoStatus.Active, "Todo has a project");
+            AddItem(--index, TodoStatus.Active, "Todo has a context");
+            AddItem(--index, TodoStatus.Active, "Todo has a description");
+            AddItem(--index, TodoStatus.Active, "Todos not modified since more than 7 days should be reviewed");
         }
 
         public IEnumerable<Todo> GetAllActives()
