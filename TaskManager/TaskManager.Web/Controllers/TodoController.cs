@@ -1,15 +1,14 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Mvc;
 using TaskManager.Contract.Business;
 using TaskManager.Contract.ViewModel.Builder;
+using TaskManager.Contract.ViewModel.Model.Todo;
 
 namespace TaskManager.Web.Controllers
 {
     public class TodoController : Controller
     {
         private readonly ITodoViewModelBuilder _todoViewModelBuilder;
-        private ITodoBusiness _todoBusiness;
+        private readonly ITodoBusiness _todoBusiness;
 
         public TodoController(ITodoViewModelBuilder todoViewModelBuilder, ITodoBusiness todoBusiness)
         {
@@ -20,7 +19,7 @@ namespace TaskManager.Web.Controllers
         // GET: Todo
         public ActionResult Index()
         {
-            var model = _todoViewModelBuilder.GetIndex();
+            var model = _todoViewModelBuilder.Index();
             return View(model);
         }
 
@@ -37,5 +36,26 @@ namespace TaskManager.Web.Controllers
             _todoBusiness.IncrementScore(id, increment);
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public ActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Add(Add model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            _todoBusiness.Create(model.Title);
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
+

@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace TaskManager.Models
+﻿namespace TaskManager.Models
 {
     public class Todo
     {
         public decimal MetaScore { get; set; }
         public string TodoId { get; set; }
-        public bool Completed { get; set; } // todo: replace with status
+        public TodoStatus Status { get; set; }
         public int Score { get; set; }
         public string Title { get; set; }
     }
