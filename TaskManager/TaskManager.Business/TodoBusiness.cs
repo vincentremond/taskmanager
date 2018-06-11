@@ -24,26 +24,34 @@ namespace TaskManager.Business
         {
             var todo = _repository.Get(todoId);
             todo.Score += increment;
-            _repository.Upsert(todo);
+            Save(todo);
         }
 
         public void Complete(string todoId)
         {
             var todo = _repository.Get(todoId);
             todo.Status = TodoStatus.Completed;
-            _repository.Upsert(todo);
+            Save(todo);
         }
 
         public void Create(string title)
         {
-            var newTodo = new Todo
+            var todo = new Todo
             {
                 TodoId = Guid.NewGuid().ToString("N"),
                 Status = TodoStatus.Active, // todo: set new tasks as draft
                 Score = 0,
                 Title = title,
+                DateCreated = DateTimeOffset.Now,
+                DateModified = DateTimeOffset.Now,
             };
-            _repository.Upsert(newTodo);
+            Save(todo);
+        }
+
+        private void Save(Todo todo)
+        {
+            todo.DateModified = DateTimeOffset.Now;
+            _repository.Upsert(todo);
         }
     }
 }
