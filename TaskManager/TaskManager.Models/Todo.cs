@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TaskManager.Models
+﻿namespace TaskManager.Models
 {
     public class Todo
     {
