@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using TaskManager.Contract.Business;
 using TaskManager.Contract.ViewModel.Builder;
-using TaskManager.Contract.ViewModel.Model;
+using TaskManager.Contract.ViewModel.Model.Todo;
 
 namespace TaskManager.ViewModel.Builder
 {
@@ -14,11 +14,11 @@ namespace TaskManager.ViewModel.Builder
             _todoBusiness = todoBusiness;
         }
 
-        public TodoIndexViewModel GetIndex()
+        public Index Index()
         {
             var todos = _todoBusiness.GetAllActives();
-            var result = new TodoIndexViewModel();
-            result.Items = todos.Select(t => new TodoIndexViewModel.Item()
+            var result = new Index();
+            result.Items = todos.Select(t => new Index.Item()
             {
                 TodoId = t.TodoId,
                 Title = t.Title,

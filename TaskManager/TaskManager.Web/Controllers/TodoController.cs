@@ -20,7 +20,7 @@ namespace TaskManager.Web.Controllers
         // GET: Todo
         public ActionResult Index()
         {
-            var model = _todoViewModelBuilder.GetIndex();
+            var model = _todoViewModelBuilder.Index();
             return View(model);
         }
 
