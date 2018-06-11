@@ -15,25 +15,25 @@ namespace TaskManager.Data.Json
 
             data = new ConcurrentDictionary<string, Todo>();
 
-            void AddItem(string todoId, string title, bool completed, int score)
+            void AddItem(string todoId, string title, TodoStatus status, int score)
             {
                 data[todoId] = new Todo
                 {
                     TodoId = todoId,
                     Title = title,
-                    Completed = completed,
+                    Status = status,
                     Score = score,
                 };
             };
 
-            AddItem("dda44d8ecbb74b07bcd69ad1599e6a8f", "Task 1", false, 10);
-            AddItem("79075496f92148568bb27669cbc7d7c4", "Task 2", false, 12);
-            AddItem("243af39779d54d70b8642bdef9b4b7eb", "Task 0", true, 13);
+            AddItem("dda44d8ecbb74b07bcd69ad1599e6a8f", "Task 1", TodoStatus.Active, 10);
+            AddItem("79075496f92148568bb27669cbc7d7c4", "Task 2", TodoStatus.Active, 12);
+            AddItem("243af39779d54d70b8642bdef9b4b7eb", "Task 0", TodoStatus.Completed, 13);
         }
 
         public IEnumerable<Todo> GetAllActives()
         {
-            var todos = data.Values.Where(t => !t.Completed).ToList();
+            var todos = data.Values.Where(t => t.Status == TodoStatus.Active).ToList();
             todos.ForEach(ComputeMetaScore);
             return todos.OrderByDescending(t => t.MetaScore).ToList();
         }

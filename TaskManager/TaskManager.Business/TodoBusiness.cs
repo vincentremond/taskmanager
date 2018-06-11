@@ -30,7 +30,7 @@ namespace TaskManager.Business
         public void Complete(string todoId)
         {
             var todo = _repository.Get(todoId);
-            todo.Completed = true;
+            todo.Status = TodoStatus.Completed;
             _repository.Upsert(todo);
         }
 
@@ -39,7 +39,7 @@ namespace TaskManager.Business
             var newTodo = new Todo
             {
                 TodoId = Guid.NewGuid().ToString("N"),
-                Completed = false,
+                Status = TodoStatus.Active, // todo: set new tasks as draft
                 Score = 0,
                 Title = title,
             };
