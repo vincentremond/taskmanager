@@ -1,0 +1,11 @@
+﻿@model TaskManager.Contract.ViewModel.Model.TodoIndexViewModel
+@{
+    ViewData["Title"] = "All todos";
+}
+
+<ul>
+    @foreach (var x in Model.Items)
+    {
+        <li>@x.Title (@x.TodoId)</li>
+    }
+</ul>
