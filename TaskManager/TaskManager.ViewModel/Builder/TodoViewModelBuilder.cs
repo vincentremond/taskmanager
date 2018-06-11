@@ -7,7 +7,7 @@ namespace TaskManager.ViewModel.Builder
 {
     public class TodoViewModelBuilder : ITodoViewModelBuilder
     {
-        private ITodoBusiness _todoBusiness;
+        private readonly ITodoBusiness _todoBusiness;
 
         public TodoViewModelBuilder(ITodoBusiness todoBusiness)
         {
@@ -22,7 +22,8 @@ namespace TaskManager.ViewModel.Builder
             {
                 TodoId = t.TodoId,
                 Title = t.Title,
-                Completed = t.Completed,
+                MetaScore =  t.MetaScore,
+                Score = t.Score,
             }).ToList();
             return result;
         }
