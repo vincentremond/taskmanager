@@ -25,5 +25,12 @@ namespace TaskManager.Business
             todo.Score += increment;
             _repository.Upsert(todo);
         }
+
+        public void Complete(string todoId)
+        {
+            var todo = _repository.Get(todoId);
+            todo.Completed = true;
+            _repository.Upsert(todo);
+        }
     }
 }
