@@ -7,5 +7,7 @@ namespace TaskManager.Contract.Data
     {
         IEnumerable<Todo> GetAllActives();
         void ComputeMetaScore(Todo todo);
+        Todo Get(string todoId);
+        void Upsert(Todo todo);
     }
 }

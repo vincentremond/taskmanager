@@ -7,7 +7,7 @@ namespace TaskManager.ViewModel.Builder
 {
     public class TodoViewModelBuilder : ITodoViewModelBuilder
     {
-        private ITodoBusiness _todoBusiness;
+        private readonly ITodoBusiness _todoBusiness;
 
         public TodoViewModelBuilder(ITodoBusiness todoBusiness)
         {

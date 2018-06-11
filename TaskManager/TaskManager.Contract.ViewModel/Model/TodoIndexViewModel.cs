@@ -8,7 +8,7 @@ namespace TaskManager.Contract.ViewModel.Model
         public IEnumerable<Item> Items { get; set; }
         public class Item
         {
-            public Guid TodoId { get; set; }
+            public string TodoId { get; set; }
             public decimal MetaScore { get; set; }
             public int Score { get; set; }
             public string Title { get; set; }

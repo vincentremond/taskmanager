@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using TaskManager.Contract.Business;
 using TaskManager.Contract.ViewModel.Builder;
 
 namespace TaskManager.Web.Controllers
@@ -7,10 +9,12 @@ namespace TaskManager.Web.Controllers
     public class TodoController : Controller
     {
         private readonly ITodoViewModelBuilder _todoViewModelBuilder;
+        private ITodoBusiness _todoBusiness;
 
-        public TodoController(ITodoViewModelBuilder todoViewModelBuilder)
+        public TodoController(ITodoViewModelBuilder todoViewModelBuilder, ITodoBusiness todoBusiness)
         {
             _todoViewModelBuilder = todoViewModelBuilder;
+            _todoBusiness = todoBusiness;
         }
 
         // GET: Todo
@@ -20,79 +24,12 @@ namespace TaskManager.Web.Controllers
             return View(model);
         }
 
-        // GET: Todo/Details/5
-        public ActionResult Details(int id)
+        public ActionResult ScoreUp(string id) => ScoreIncrement(id, 1);
+        public ActionResult ScoreDown(string id) => ScoreIncrement(id, -1);
+        private ActionResult ScoreIncrement(string id, int increment)
         {
-            return View();
-        }
-
-        // GET: Todo/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Todo/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Todo/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Todo/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Todo/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Todo/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            _todoBusiness.IncrementScore(id, increment);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
