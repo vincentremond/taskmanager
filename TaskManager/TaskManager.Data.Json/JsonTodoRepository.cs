@@ -22,6 +22,8 @@ namespace TaskManager.Data.Json
                 data[todoId] = new Todo
                 {
                     TodoId = todoId,
+                    DateCreated = DateTimeOffset.Now,
+                    DateModified = DateTimeOffset.Now,
                     Title = title,
                     Status = status,
                     Score = score,
@@ -29,8 +31,6 @@ namespace TaskManager.Data.Json
             };
 
             var index = 100;
-            AddItem(--index, TodoStatus.Active, "Todo has a creation date");
-            AddItem(--index, TodoStatus.Active, "Todo has a modification date");
             AddItem(--index, TodoStatus.Active, "Todo is a draft before being active");
             AddItem(--index, TodoStatus.Active, "Todo has a project");
             AddItem(--index, TodoStatus.Active, "Todo has a context");
