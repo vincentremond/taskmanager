@@ -31,11 +31,15 @@ namespace TaskManager.Data.Json
             };
 
             var index = 100;
+            AddItem(--index, TodoStatus.Active, "Really persist task to disk");
             AddItem(--index, TodoStatus.Active, "Todo is a draft before being active");
+            AddItem(--index, TodoStatus.Active, "Todo has a duration");
+            AddItem(--index, TodoStatus.Active, "Todo has an url");
             AddItem(--index, TodoStatus.Active, "Todo has a project");
             AddItem(--index, TodoStatus.Active, "Todo has a context");
             AddItem(--index, TodoStatus.Active, "Todo has a description");
             AddItem(--index, TodoStatus.Active, "Todos not modified since more than 7 days should be reviewed");
+            AddItem(--index, TodoStatus.Active, "Todo can be deleted");
         }
 
         public IEnumerable<Todo> GetAllActives()
