@@ -6,5 +6,6 @@ namespace TaskManager.Contract.Data
     public interface ITodoRepository
     {
         IEnumerable<Todo> GetAllActives();
+        void ComputeMetaScore(Todo todo);
     }
 }

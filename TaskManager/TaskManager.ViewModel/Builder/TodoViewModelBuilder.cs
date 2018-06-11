@@ -22,7 +22,8 @@ namespace TaskManager.ViewModel.Builder
             {
                 TodoId = t.TodoId,
                 Title = t.Title,
-                Completed = t.Completed,
+                MetaScore =  t.MetaScore,
+                Score = t.Score,
             }).ToList();
             return result;
         }

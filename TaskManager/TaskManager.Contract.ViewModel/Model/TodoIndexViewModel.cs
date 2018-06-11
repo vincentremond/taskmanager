@@ -9,7 +9,8 @@ namespace TaskManager.Contract.ViewModel.Model
         public class Item
         {
             public Guid TodoId { get; set; }
-            public bool Completed { get; set; }
+            public decimal MetaScore { get; set; }
+            public int Score { get; set; }
             public string Title { get; set; }
         }
     }
