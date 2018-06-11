@@ -8,5 +8,6 @@ namespace TaskManager.Contract.Business
         IEnumerable<Todo> GetAllActives();
         void IncrementScore(string todoId, int increment);
         void Complete(string todoId);
+        void Create(string title);
     }
 }

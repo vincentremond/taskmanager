@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TaskManager.Contract.Business;
 using TaskManager.Contract.ViewModel.Builder;
+using TaskManager.Contract.ViewModel.Model.Todo;
 
 namespace TaskManager.Web.Controllers
 {
@@ -35,5 +36,26 @@ namespace TaskManager.Web.Controllers
             _todoBusiness.IncrementScore(id, increment);
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public ActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Add(Add model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            _todoBusiness.Create(model.Title);
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
+

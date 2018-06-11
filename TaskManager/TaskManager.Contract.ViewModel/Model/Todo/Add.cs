@@ -2,5 +2,6 @@
 {
     public class Add
     {
+        public string  Title { get; set; }
     }
 }
