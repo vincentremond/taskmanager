@@ -24,6 +24,12 @@ namespace TaskManager.Web.Controllers
             return View(model);
         }
 
+        public ActionResult Complete(string id)
+        {
+            _todoBusiness.Complete(id);
+            return RedirectToAction(nameof(Index));
+        }
+
         public ActionResult ScoreUp(string id) => ScoreIncrement(id, 1);
         public ActionResult ScoreDown(string id) => ScoreIncrement(id, -1);
         private ActionResult ScoreIncrement(string id, int increment)
