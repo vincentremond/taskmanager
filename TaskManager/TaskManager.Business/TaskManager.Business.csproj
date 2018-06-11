@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TaskManager.Contract.Business\TaskManager.Contract.Business.csproj" />
+    <ProjectReference Include="..\TaskManager.Contract.Data\TaskManager.Contract.Data.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

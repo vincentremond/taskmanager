@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <ProjectReference Include="..\TaskManager.Contract.Business\TaskManager.Contract.Business.csproj" />
     <ProjectReference Include="..\TaskManager.Contract.ViewModel\TaskManager.Contract.ViewModel.csproj" />
   </ItemGroup>
 

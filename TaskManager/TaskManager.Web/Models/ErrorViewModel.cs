@@ -1,5 +1,3 @@
-using System;
-
 namespace TaskManager.Web.Models
 {
     public class ErrorViewModel
