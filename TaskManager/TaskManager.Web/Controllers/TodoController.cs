@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Mvc;
 using TaskManager.Contract.Business;
 using TaskManager.Contract.ViewModel.Builder;
 
@@ -9,7 +7,7 @@ namespace TaskManager.Web.Controllers
     public class TodoController : Controller
     {
         private readonly ITodoViewModelBuilder _todoViewModelBuilder;
-        private ITodoBusiness _todoBusiness;
+        private readonly ITodoBusiness _todoBusiness;
 
         public TodoController(ITodoViewModelBuilder todoViewModelBuilder, ITodoBusiness todoBusiness)
         {
