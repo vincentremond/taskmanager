@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace TaskManager.Contract.ViewModel.Model
+namespace TaskManager.Contract.ViewModel.Model.Todo
 {
-    public class TodoIndexViewModel
+    public class Index
     {
         public IEnumerable<Item> Items { get; set; }
         public class Item
