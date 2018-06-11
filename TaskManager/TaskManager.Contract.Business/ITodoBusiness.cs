@@ -6,5 +6,6 @@ namespace TaskManager.Contract.Business
     public interface ITodoBusiness
     {
         IEnumerable<Todo> GetAllActives();
+        void IncrementScore(string todoId, int increment);
     }
 }
