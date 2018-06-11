@@ -6,6 +6,6 @@
 <ul>
     @foreach (var x in Model.Items)
     {
-        <li>@x.Title (@x.TodoId)</li>
+        <li>[@x.MetaScore.ToString("0.0")](@x.Score) @x.Title (@x.TodoId)</li>
     }
 </ul>
