@@ -27,6 +27,7 @@ namespace TaskManager.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddRouting(options => options.LowercaseUrls = true);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddTaskManagerWebApp();
