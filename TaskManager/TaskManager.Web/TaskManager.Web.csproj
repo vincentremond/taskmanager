@@ -14,4 +14,8 @@
     <ProjectReference Include="..\TaskManager.Web.Bootstrap\TaskManager.Web.Bootstrap.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
 </Project>
