@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using Microsoft.AspNetCore.Hosting;
+using Newtonsoft.Json;
 using TaskManager.Contract.Data;
 using TaskManager.Models;
 
@@ -9,59 +10,35 @@ namespace TaskManager.Data.Json
 {
     public class JsonTodoRepository : ITodoRepository
     {
-        private static readonly ConcurrentDictionary<string, Todo> data;
+        private readonly JsonFileRepository<Todo> _fileRepository;
 
-        static JsonTodoRepository()
+        public JsonTodoRepository(IHostingEnvironment hostingEnvironment)
         {
-
-            data = new ConcurrentDictionary<string, Todo>();
-
-            void AddItem(int score, TodoStatus status, string title)
-            {
-                var todoId = Guid.NewGuid().ToString("N");
-                data[todoId] = new Todo
-                {
-                    TodoId = todoId,
-                    DateCreated = DateTimeOffset.Now,
-                    DateModified = DateTimeOffset.Now,
-                    Title = title,
-                    Status = status,
-                    Score = score,
-                };
-            };
-
-            var index = 100;
-            AddItem(--index, TodoStatus.Active, "Really persist task to disk");
-            AddItem(--index, TodoStatus.Active, "Todo is a draft before being active");
-            AddItem(--index, TodoStatus.Active, "Todo has a duration");
-            AddItem(--index, TodoStatus.Active, "Todo has an url");
-            AddItem(--index, TodoStatus.Active, "Todo has a project");
-            AddItem(--index, TodoStatus.Active, "Todo has a context");
-            AddItem(--index, TodoStatus.Active, "Todo has a description");
-            AddItem(--index, TodoStatus.Active, "Todos not modified since more than 7 days should be reviewed");
-            AddItem(--index, TodoStatus.Active, "Todo can be deleted");
-        }
-
-        public IEnumerable<Todo> GetAllActives()
-        {
-            var todos = data.Values.Where(t => t.Status == TodoStatus.Active).ToList();
-            todos.ForEach(ComputeMetaScore);
-            return todos.OrderByDescending(t => t.MetaScore).ToList();
-        }
-
-        public void ComputeMetaScore(Todo todo)
-        {
-            todo.MetaScore = todo.Score;
+            _fileRepository = new JsonFileRepository<Todo>(hostingEnvironment, "todo");
         }
 
         public Todo Get(string todoId)
         {
-            return data.TryGetValue(todoId, out var todo) ? todo : null;
+            using (var todos = _fileRepository.GetDataAsReadOnly())
+            {
+                return todos.Data.SingleOrDefault(t => t.TodoId == todoId);
+            }
+        }
+
+        public IEnumerable<Todo> GetAllActives()
+        {
+            using (var todos = _fileRepository.GetDataAsReadOnly())
+            {
+                return todos.Data.Where(t => t.Status == TodoStatus.Active).ToList();
+            }
         }
 
         public void Upsert(Todo todo)
         {
-            data[todo.TodoId] = todo;
+            using (var todos = _fileRepository.GetDataAsReadWrite())
+            {
+                todos.Set(t => t.TodoId == todo.TodoId, todo);
+            }
         }
     }
 }
