@@ -20,6 +20,7 @@ namespace TaskManager.Web.Bootstrap
         static void AddBusiness(this IServiceCollection services)
         {
             services.AddTransient<ITodoBusiness, TodoBusiness>();
+            services.AddTransient<ITodoEnricher, TodoEnricher>();
         }
 
         static void AddViewModel(this IServiceCollection services)
