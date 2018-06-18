@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using TaskManager.Contract.Business;
 using TaskManager.Contract.Data;
 using TaskManager.Models;
@@ -9,15 +10,21 @@ namespace TaskManager.Business
     public class TodoBusiness : ITodoBusiness
     {
         private readonly ITodoRepository _repository;
+        private readonly ITodoEnricher _enricher;
 
-        public TodoBusiness(ITodoRepository repository)
+        public TodoBusiness(ITodoRepository repository, ITodoEnricher enricher)
         {
             _repository = repository;
+            _enricher = enricher;
         }
 
-        public IEnumerable<Todo> GetAllActives()
+        public IEnumerable<MetaTodo> GetAllActives()
         {
-            return _repository.GetAllActives();
+            return _repository
+                .GetAllActives()
+                .Select(t  => _enricher.Enrich(t))
+                .OrderByDescending(t => t.MetaScore)
+                .ToList();
         }
 
         public void IncrementScore(string todoId, int increment)
