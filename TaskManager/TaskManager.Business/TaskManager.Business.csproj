@@ -1,12 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <ItemGroup>
-    <ProjectReference Include="..\TaskManager.Contract.Business\TaskManager.Contract.Business.csproj" />
-    <ProjectReference Include="..\TaskManager.Contract.Data\TaskManager.Contract.Data.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\TaskManager.Contract.Business\TaskManager.Contract.Business.csproj" />
+		<ProjectReference Include="..\TaskManager.Contract.Data\TaskManager.Contract.Data.csproj" />
+	</ItemGroup>
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="7.0.0" />
+	</ItemGroup>
 
 </Project>
