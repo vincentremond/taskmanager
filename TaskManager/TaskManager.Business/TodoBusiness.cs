@@ -79,6 +79,11 @@ namespace TaskManager.Business
                 return false;
             }
 
+            if (!todo.Complexity.HasValue)
+            {
+                return false;
+            }
+
             return true;
         }
     }
