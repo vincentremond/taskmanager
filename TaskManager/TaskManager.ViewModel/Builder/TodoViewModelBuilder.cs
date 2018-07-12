@@ -17,14 +17,49 @@ namespace TaskManager.ViewModel.Builder
         public Index Index()
         {
             var todos = _todoBusiness.GetAllActives();
-            var result = new Index();
-            result.Items = todos.Select(t => new Index.Item()
+            var result = new Index
             {
-                TodoId = t.TodoId,
-                Title = t.Title,
-                MetaScore =  t.MetaScore,
-            }).ToList();
+                Items = todos.Select(t => new Index.Item()
+                {
+                    TodoId = t.TodoId,
+                    Title = t.Title,
+                    MetaScore = t.MetaScore,
+                }).ToList()
+            };
             return result;
+        }
+
+        public Edit Edit(string id)
+        {
+            var todo = _todoBusiness.Get(id);
+            var result = new Edit
+            {
+                TodoId = todo.TodoId,
+                Title = todo.Title,
+            };
+            return result;
+        }
+
+        public void Update(Edit model)
+        {
+            var todo = _todoBusiness.Get(model.TodoId);
+            todo.Title = model.Title;
+            _todoBusiness.SaveChanges(todo);
+        }
+
+        public void Complete(string todoId)
+        {
+            _todoBusiness.Complete(todoId);
+        }
+
+        public void IncrementScore(string todoId, int increment)
+        {
+            _todoBusiness.IncrementScore(todoId, increment);
+        }
+
+        public void Create(string title)
+        {
+            _todoBusiness.Create(title);
         }
     }
 }
