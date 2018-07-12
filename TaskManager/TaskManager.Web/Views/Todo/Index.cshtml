@@ -10,6 +10,7 @@
             <a asp-controller="Todo" asp-action="Complete" asp-route-id="@x.TodoId">☐</a>
             <a asp-controller="Todo" asp-action="ScoreUp" asp-route-id="@x.TodoId">👍</a>
             <a asp-controller="Todo" asp-action="ScoreDown" asp-route-id="@x.TodoId">👎</a>
+            <a asp-controller="Todo" asp-action="Edit" asp-route-id="@x.TodoId">📂</a>
             [@x.MetaScore.ToString("0.0")] @x.Title
         </li>
     }

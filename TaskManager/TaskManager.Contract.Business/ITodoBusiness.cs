@@ -9,5 +9,7 @@ namespace TaskManager.Contract.Business
         void IncrementScore(string todoId, int increment);
         void Complete(string todoId);
         void Create(string title);
+        MetaTodo Get(string todoId);
+        void SaveChanges(Todo todo);
     }
 }
