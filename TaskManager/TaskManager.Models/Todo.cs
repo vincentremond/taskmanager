@@ -11,5 +11,6 @@ namespace TaskManager.Models
         public int Complexity { get; set; }
         public DateTimeOffset DateCreated { get; set; }
         public DateTimeOffset DateModified { get; set; }
+        public string Description { get; set; }
     }
 }

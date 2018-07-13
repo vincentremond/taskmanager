@@ -37,6 +37,7 @@ namespace TaskManager.ViewModel.Builder
                 TodoId = todo.TodoId,
                 Title = todo.Title,
                 Complexity = todo.Complexity,
+                Description = todo.Description,
             };
             return result;
         }
@@ -46,6 +47,7 @@ namespace TaskManager.ViewModel.Builder
             var todo = _todoBusiness.Get(model.TodoId);
             todo.Title = model.Title;
             todo.Complexity = model.Complexity;
+            todo.Description = model.Description;
             _todoBusiness.SaveChanges(todo);
         }
 
