@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using Microsoft.AspNetCore.Hosting;
@@ -9,8 +8,8 @@ namespace TaskManager.Data.Json
 {
     internal class JsonFileRepository<T>
     {
-        private string _file;
-        private SemaphoreSlim _semaphore;
+        private readonly string _file;
+        private readonly SemaphoreSlim _semaphore;
 
         public JsonFileRepository(IHostingEnvironment hostingEnvironment, string name)
         {
