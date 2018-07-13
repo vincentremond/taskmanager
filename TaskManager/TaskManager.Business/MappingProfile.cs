@@ -7,7 +7,8 @@ namespace TaskManager.Business
     {
         public MappingProfile()
         {
-            CreateMap<Todo, MetaTodo>();
+            CreateMap<Todo, MetaTodo>()
+                .ForAllOtherMembers(o => o.Ignore());
         }
     }
 }
