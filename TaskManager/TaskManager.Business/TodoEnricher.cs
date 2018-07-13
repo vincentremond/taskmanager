@@ -16,7 +16,7 @@ namespace TaskManager.Business
         public MetaTodo Enrich(Todo todo)
         {
             var result = _mapper.Map<MetaTodo>(todo);
-            result.MetaScore = todo.Score;
+            result.MetaScore = 100M * todo.Score / todo.Complexity;
             return result;
         }
     }

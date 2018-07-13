@@ -22,7 +22,7 @@ namespace TaskManager.Business
         {
             return _repository
                 .GetAllActives()
-                .Select(t  => _enricher.Enrich(t))
+                .Select(t => _enricher.Enrich(t))
                 .OrderByDescending(t => t.MetaScore)
                 .ToList();
         }
@@ -79,7 +79,7 @@ namespace TaskManager.Business
                 return false;
             }
 
-            if (!todo.Complexity.HasValue)
+            if (!(todo.Complexity > 0))
             {
                 return false;
             }
