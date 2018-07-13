@@ -8,6 +8,7 @@ namespace TaskManager.Models
         public TodoStatus Status { get; set; }
         public int Score { get; set; }
         public string Title { get; set; }
+        public int Complexity { get; set; }
         public DateTimeOffset DateCreated { get; set; }
         public DateTimeOffset DateModified { get; set; }
     }

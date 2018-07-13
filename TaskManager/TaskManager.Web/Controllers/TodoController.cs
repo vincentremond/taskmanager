@@ -8,12 +8,10 @@ namespace TaskManager.Web.Controllers
     public class TodoController : Controller
     {
         private readonly ITodoViewModelBuilder _todoViewModelBuilder;
-        private readonly ITodoBusiness _todoBusiness;
 
-        public TodoController(ITodoViewModelBuilder todoViewModelBuilder, ITodoBusiness todoBusiness)
+        public TodoController(ITodoViewModelBuilder todoViewModelBuilder)
         {
             _todoViewModelBuilder = todoViewModelBuilder;
-            _todoBusiness = todoBusiness;
         }
 
         // GET: Todo
@@ -25,7 +23,7 @@ namespace TaskManager.Web.Controllers
 
         public ActionResult Complete(string id)
         {
-            _todoBusiness.Complete(id);
+            _todoViewModelBuilder.Complete(id);
             return RedirectToAction(nameof(Index));
         }
 
@@ -33,7 +31,7 @@ namespace TaskManager.Web.Controllers
         public ActionResult ScoreDown(string id) => ScoreIncrement(id, -1);
         private ActionResult ScoreIncrement(string id, int increment)
         {
-            _todoBusiness.IncrementScore(id, increment);
+            _todoViewModelBuilder.IncrementScore(id, increment);
             return RedirectToAction(nameof(Index));
         }
 
@@ -52,7 +50,28 @@ namespace TaskManager.Web.Controllers
                 return View(model);
             }
 
-            _todoBusiness.Create(model.Title);
+            _todoViewModelBuilder.Create(model.Title);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
+        public ActionResult Edit(string id)
+        {
+            var model = _todoViewModelBuilder.Edit(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Edit model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            _todoViewModelBuilder.Update(model);
 
             return RedirectToAction(nameof(Index));
         }
