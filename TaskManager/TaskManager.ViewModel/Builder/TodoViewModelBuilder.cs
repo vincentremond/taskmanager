@@ -36,7 +36,7 @@ namespace TaskManager.ViewModel.Builder
             {
                 TodoId = todo.TodoId,
                 Title = todo.Title,
-                Complexity = todo.Complexity.GetValueOrDefault(),
+                Complexity = todo.Complexity,
             };
             return result;
         }
