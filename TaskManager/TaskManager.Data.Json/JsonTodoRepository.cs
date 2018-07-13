@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using Microsoft.AspNetCore.Hosting;
-using Newtonsoft.Json;
 using TaskManager.Contract.Data;
 using TaskManager.Models;
 

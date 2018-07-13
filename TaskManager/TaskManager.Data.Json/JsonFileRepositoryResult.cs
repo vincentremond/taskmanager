@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
-using TaskManager.Models;
 
 namespace TaskManager.Data.Json
 {
     internal class JsonFileRepositoryResult<T> : IDisposable
     {
-        private JsonFileRepository<T> _jsonFileRepository;
+        private readonly JsonFileRepository<T> _jsonFileRepository;
         private readonly bool _updateOnDispose;
         private readonly SemaphoreSlim _semaphore;
 
@@ -40,6 +39,11 @@ namespace TaskManager.Data.Json
             {
                 Data[index] = todo;
             }
+        }
+
+        public void Delete(Predicate<T> predicate)
+        {
+            Data.RemoveAll(predicate);
         }
     }
 }
