@@ -46,28 +46,27 @@
     "Title": "Todo has a project",
     "Complexity": 120,
     "DateCreated": "2018-06-17T21:13:30.9339114+02:00",
-    "DateModified": "2018-06-17T22:02:33.9073033+02:00",
+    "DateModified": "2018-07-13T10:59:45.8705649+02:00",
     "Description": null
   },
   {
     "TodoId": "4e6c106cb2a245b1abffeffda244791d",
     "Status": 2,
-    "Score": 1,
+    "Score": 3,
     "Title": "Todo has a context",
     "Complexity": 120,
     "DateCreated": "2018-06-17T21:13:37.4281675+02:00",
-    "DateModified": "2018-06-17T22:02:35.8735181+02:00",
+    "DateModified": "2018-07-13T10:59:48.6698972+02:00",
     "Description": null
   },
   {
-    "MetaScore": 1.6666666666666666666666666667,
     "TodoId": "d0e33314ec1d4e45a2e32cba9ce5bb46",
-    "Status": 2,
+    "Status": 3,
     "Score": 1,
     "Title": "Todo has a description",
     "Complexity": 60,
     "DateCreated": "2018-06-17T21:13:49.6471666+02:00",
-    "DateModified": "2018-07-13T10:55:01.7685397+02:00",
+    "DateModified": "2018-07-13T10:58:12.6617947+02:00",
     "Description": "Je suis une description."
   },
   {
