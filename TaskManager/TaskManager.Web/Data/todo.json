@@ -4,30 +4,34 @@
     "Status": 2,
     "Score": -2,
     "Title": "Async",
+    "Complexity": 120,
     "DateCreated": "2018-06-17T21:00:04.7682992+02:00",
     "DateModified": "2018-06-17T21:59:02.703971+02:00"
   },
   {
     "TodoId": "2ef4ddc4117646f4a3c4937a74ee6787",
-    "Status": 2,
+    "Status": 3,
     "Score": 0,
     "Title": "Todo as draft before active",
+    "Complexity": 60,
     "DateCreated": "2018-06-17T21:11:12.7215762+02:00",
-    "DateModified": "2018-06-17T21:59:07.6120558+02:00"
+    "DateModified": "2018-07-12T18:11:28.3035413+02:00"
   },
   {
     "TodoId": "cb3ca4572e77410ea1e223a9f59a53c0",
-    "Status": 2,
-    "Score": 1,
+    "Status": 3,
+    "Score": 2,
     "Title": "Todo must have a duration",
+    "Complexity": 10,
     "DateCreated": "2018-06-17T21:13:09.9118395+02:00",
-    "DateModified": "2018-06-17T22:02:31.805475+02:00"
+    "DateModified": "2018-07-13T09:58:24.3903018+02:00"
   },
   {
     "TodoId": "4e9fa46ab8374cbf83887c3d495afdf0",
     "Status": 2,
     "Score": -1,
     "Title": "Todo has an url",
+    "Complexity": 30,
     "DateCreated": "2018-06-17T21:13:18.8578447+02:00",
     "DateModified": "2018-06-17T22:02:57.4878747+02:00"
   },
@@ -36,6 +40,7 @@
     "Status": 2,
     "Score": 1,
     "Title": "Todo has a project",
+    "Complexity": 120,
     "DateCreated": "2018-06-17T21:13:30.9339114+02:00",
     "DateModified": "2018-06-17T22:02:33.9073033+02:00"
   },
@@ -44,6 +49,7 @@
     "Status": 2,
     "Score": 1,
     "Title": "Todo has a context",
+    "Complexity": 120,
     "DateCreated": "2018-06-17T21:13:37.4281675+02:00",
     "DateModified": "2018-06-17T22:02:35.8735181+02:00"
   },
@@ -52,6 +58,7 @@
     "Status": 2,
     "Score": 1,
     "Title": "Todo has a description",
+    "Complexity": 60,
     "DateCreated": "2018-06-17T21:13:49.6471666+02:00",
     "DateModified": "2018-06-17T22:02:39.7202927+02:00"
   },
@@ -60,6 +67,7 @@
     "Status": 2,
     "Score": -1,
     "Title": "Todos not modified since 7 days should be reviewed",
+    "Complexity": 120,
     "DateCreated": "2018-06-17T21:14:13.2495004+02:00",
     "DateModified": "2018-06-17T22:02:43.6653238+02:00"
   },
@@ -68,6 +76,7 @@
     "Status": 2,
     "Score": -3,
     "Title": "Todo can be deleted",
+    "Complexity": 30,
     "DateCreated": "2018-06-17T21:14:27.689586+02:00",
     "DateModified": "2018-06-17T22:02:50.3168808+02:00"
   },
@@ -76,7 +85,35 @@
     "Status": 3,
     "Score": 1,
     "Title": "Enriched todos",
+    "Complexity": 20,
     "DateCreated": "2018-06-17T21:14:56.0678692+02:00",
     "DateModified": "2018-06-17T22:02:12.2096062+02:00"
+  },
+  {
+    "TodoId": "60708a3b06d44c09a534178d3c7c08e3",
+    "Status": 3,
+    "Score": 3,
+    "Title": "Todo must be editable",
+    "Complexity": 60,
+    "DateCreated": "2018-07-12T17:52:29.1350456+02:00",
+    "DateModified": "2018-07-12T17:55:19.0633645+02:00"
+  },
+  {
+    "TodoId": "d4dfcbade72c4a37b1bd5eb67d16aca4",
+    "Status": 3,
+    "Score": 0,
+    "Title": "I am a draft",
+    "Complexity": 19,
+    "DateCreated": "2018-07-12T17:58:50.2232448+02:00",
+    "DateModified": "2018-07-12T18:11:25.197446+02:00"
+  },
+  {
+    "TodoId": "a9822a57201043329034b00f09feee80",
+    "Status": 1,
+    "Score": 0,
+    "Title": "no i am a draft !!!",
+    "Complexity": 60,
+    "DateCreated": "2018-07-12T18:11:17.555586+02:00",
+    "DateModified": "2018-07-12T18:11:17.555592+02:00"
   }
 ]
