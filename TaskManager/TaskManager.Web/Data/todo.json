@@ -50,9 +50,9 @@
     "Title": "Todo has a project",
     "Complexity": 120,
     "DateCreated": "2018-06-17T21:13:30.9339114+02:00",
-    "DateModified": "2018-07-13T10:59:45.8705649+02:00",
+    "DateModified": "2018-07-16T15:25:05.6830342+02:00",
     "Description": null,
-    "ContextId": null
+    "ContextId": "6e43e27aeb1544fd901a8c34ac812e81"
   },
   {
     "TodoId": "4e6c106cb2a245b1abffeffda244791d",
@@ -61,9 +61,9 @@
     "Title": "Todo has a context",
     "Complexity": 120,
     "DateCreated": "2018-06-17T21:13:37.4281675+02:00",
-    "DateModified": "2018-07-16T14:18:47.8538297+02:00",
+    "DateModified": "2018-07-16T15:25:03.2308734+02:00",
     "Description": null,
-    "ContextId": null
+    "ContextId": "09f0c993f62342a486f889310b8de858"
   },
   {
     "TodoId": "d0e33314ec1d4e45a2e32cba9ce5bb46",

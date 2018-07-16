@@ -38,6 +38,7 @@ namespace TaskManager.ViewModel.Builder
                 Title = todo.Title,
                 Complexity = todo.Complexity,
                 Description = todo.Description,
+                ContextId = todo.ContextId,
             };
             return result;
         }

@@ -25,8 +25,7 @@ namespace TaskManager.Data.Json
         {
             using (var todos = _fileRepository.GetDataAsReadOnly())
             {
-                var contexts = _contextRepository.GetAll();
-                return Convert(todos.Data.SingleOrDefault(t => t.TodoId == todoId), contexts);
+                return Convert(todos.Data.SingleOrDefault(t => t.TodoId == todoId));
             }
         }
 
@@ -34,11 +33,10 @@ namespace TaskManager.Data.Json
         {
             using (var todos = _fileRepository.GetDataAsReadOnly())
             {
-                var contexts = _contextRepository.GetAll();
                 return todos
                     .Data
                     .Where(t => !t.Completed)
-                    .Select(j => Convert(j, contexts))
+                    .Select(Convert)
                     .ToList();
             }
         }
@@ -51,16 +49,14 @@ namespace TaskManager.Data.Json
             }
         }
 
-        private Todo Convert(JsonTodo input, IEnumerable<Context> contexts)
+        private Todo Convert(JsonTodo input)
         {
             if (input == null)
             {
                 return null;
             }
 
-            var result = _mapper.Map<Todo>(input);
-            result.Context = contexts.SingleOrDefault(c => c.ContextId == input.ContextId);
-            return result;
+            return _mapper.Map<Todo>(input);
         }
 
         private JsonTodo Convert(Todo input)
