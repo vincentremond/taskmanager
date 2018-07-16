@@ -8,12 +8,8 @@ namespace TaskManager.Data.Json
     {
         public MappingProfile()
         {
-            CreateMap<JsonTodo, Todo>()
-                .ForMember(i => i.Context, opts => opts.Ignore())
-                ;
-            CreateMap<Todo, JsonTodo>()
-                .ForMember(j => j.ContextId, opts => opts.MapFrom(s => s.Context.ContextId))
-                ;
+            CreateMap<JsonTodo, Todo>();
+            CreateMap<Todo, JsonTodo>();
         }
     }
 }
