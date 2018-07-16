@@ -2,15 +2,15 @@
 @{
     ViewData["Title"] = "All todos";
 }
-<a class="btn btn-default" asp-controller="Todo" asp-action="Add">Add</a>
+<a class="btn btn-default" asp-action="Add">Add</a>
 <ul>
     @foreach (var x in Model.Items)
     {
         <li>
-            <a asp-controller="Todo" asp-action="Complete" asp-route-id="@x.TodoId">☐</a>
-            <a asp-controller="Todo" asp-action="ScoreUp" asp-route-id="@x.TodoId">👍</a>
-            <a asp-controller="Todo" asp-action="ScoreDown" asp-route-id="@x.TodoId">👎</a>
-            <a asp-controller="Todo" asp-action="Edit" asp-route-id="@x.TodoId">📂</a>
+            <a asp-action="Complete" asp-route-id="@x.TodoId">☐</a>
+            <a asp-action="ScoreUp" asp-route-id="@x.TodoId">👍</a>
+            <a asp-action="ScoreDown" asp-route-id="@x.TodoId">👎</a>
+            <a asp-action="Edit" asp-route-id="@x.TodoId">📂</a>
             [@x.MetaScore.ToString("0.0")] @x.Title
         </li>
     }

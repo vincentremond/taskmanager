@@ -19,6 +19,7 @@ namespace TaskManager.Web.Bootstrap
 
         static void AddBusiness(this IServiceCollection services)
         {
+            services.AddTransient<IContextBusiness, ContextBusiness>();
             services.AddTransient<ITodoBusiness, TodoBusiness>();
             services.AddTransient<ITodoEnricher, TodoEnricher>();
         }
@@ -26,11 +27,13 @@ namespace TaskManager.Web.Bootstrap
         static void AddViewModel(this IServiceCollection services)
         {
             services.AddTransient<ITodoViewModelBuilder, TodoViewModelBuilder>();
+            services.AddTransient<IContextViewModelBuilder, ContextViewModelBuilder>();
         }
 
         static void AddDataJson(this IServiceCollection services)
         {
             services.AddTransient<ITodoRepository, JsonTodoRepository>();
+            services.AddTransient<IContextRepository, JsonContextRepository>();
         }
     }
 }

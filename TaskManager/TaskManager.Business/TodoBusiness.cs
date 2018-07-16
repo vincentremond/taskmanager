@@ -9,34 +9,34 @@ namespace TaskManager.Business
 {
     public class TodoBusiness : ITodoBusiness
     {
-        private readonly ITodoRepository _repository;
-        private readonly ITodoEnricher _enricher;
+        private readonly ITodoRepository _todoRepository;
+        private readonly ITodoEnricher _todoEnricher;
 
         public TodoBusiness(ITodoRepository repository, ITodoEnricher enricher)
         {
-            _repository = repository;
-            _enricher = enricher;
+            _todoRepository = repository;
+            _todoEnricher = enricher;
         }
 
         public IEnumerable<MetaTodo> GetAllActives()
         {
-            return _repository
+            return _todoRepository
                 .GetAllActives()
-                .Select(t => _enricher.Enrich(t))
+                .Select(t => _todoEnricher.Enrich(t))
                 .OrderByDescending(t => t.MetaScore)
                 .ToList();
         }
 
         public void IncrementScore(string todoId, int increment)
         {
-            var todo = _repository.Get(todoId);
+            var todo = _todoRepository.Get(todoId);
             todo.Score += increment;
             SaveChanges(todo);
         }
 
         public void Complete(string todoId)
         {
-            var todo = _repository.Get(todoId);
+            var todo = _todoRepository.Get(todoId);
             todo.Status = TodoStatus.Completed;
             SaveChanges(todo);
         }
@@ -57,8 +57,8 @@ namespace TaskManager.Business
 
         public MetaTodo Get(string todoId)
         {
-            var todo = _repository.Get(todoId);
-            var metaTodo = _enricher.Enrich(todo);
+            var todo = _todoRepository.Get(todoId);
+            var metaTodo = _todoEnricher.Enrich(todo);
             return metaTodo;
         }
 
@@ -69,7 +69,7 @@ namespace TaskManager.Business
             {
                 todo.Status = TodoStatus.Active;
             }
-            _repository.Upsert(todo);
+            _todoRepository.Upsert(todo);
         }
 
         private bool HasMandatoryFields(Todo todo)

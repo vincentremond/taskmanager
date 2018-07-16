@@ -52,11 +52,11 @@
   {
     "TodoId": "4e6c106cb2a245b1abffeffda244791d",
     "Status": 2,
-    "Score": 3,
+    "Score": 4,
     "Title": "Todo has a context",
     "Complexity": 120,
     "DateCreated": "2018-06-17T21:13:37.4281675+02:00",
-    "DateModified": "2018-07-13T10:59:48.6698972+02:00",
+    "DateModified": "2018-07-13T16:59:47.1158376+02:00",
     "Description": null
   },
   {
@@ -127,6 +127,26 @@
     "Complexity": 60,
     "DateCreated": "2018-07-12T18:11:17.555586+02:00",
     "DateModified": "2018-07-12T18:11:17.555592+02:00",
+    "Description": null
+  },
+  {
+    "TodoId": "e7af9847a6734e1082268011f4f93dc5",
+    "Status": 1,
+    "Score": 0,
+    "Title": "PC",
+    "Complexity": 0,
+    "DateCreated": "2018-07-13T17:28:36.4812073+02:00",
+    "DateModified": "2018-07-13T17:28:36.4814772+02:00",
+    "Description": null
+  },
+  {
+    "TodoId": "a4b208cdbea442f68fcf453b2fb683da",
+    "Status": 1,
+    "Score": 0,
+    "Title": "fgsdgdf",
+    "Complexity": 0,
+    "DateCreated": "2018-07-13T17:29:24.8153971+02:00",
+    "DateModified": "2018-07-13T17:29:24.8154071+02:00",
     "Description": null
   }
 ]
