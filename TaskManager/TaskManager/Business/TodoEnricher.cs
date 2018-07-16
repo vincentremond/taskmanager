@@ -17,7 +17,22 @@ namespace TaskManager.Business
         {
             var result = _mapper.Map<MetaTodo>(todo);
             result.MetaScore = 1M * todo.Score - todo.Complexity / 60M;
+            result.IsDraft = !HasMandatoryFields(todo);
             return result;
+        }
+        private bool HasMandatoryFields(Todo todo)
+        {
+            if (string.IsNullOrWhiteSpace(todo.Title))
+            {
+                return false;
+            }
+
+            if (!(todo.Complexity > 0))
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

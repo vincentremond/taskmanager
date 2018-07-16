@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace TaskManager.Models
+namespace TaskManager.Data.Json.DataObjects
 {
-    public class Todo
+    public class JsonTodo
     {
         public string TodoId { get; set; }
         public bool Completed { get; set; }
@@ -12,6 +12,6 @@ namespace TaskManager.Models
         public DateTimeOffset DateCreated { get; set; }
         public DateTimeOffset DateModified { get; set; }
         public string Description { get; set; }
-        public Context Context { get; set; }
+        public string ContextId { get; set; }
     }
 }
