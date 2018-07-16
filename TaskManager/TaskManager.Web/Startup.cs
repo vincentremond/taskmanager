@@ -1,10 +1,12 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TaskManager.Business;
 using TaskManager.Web.Bootstrap;
 
 namespace TaskManager.Web
@@ -28,7 +30,7 @@ namespace TaskManager.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddAutoMapper();
+            services.AddAutoMapper((Action<IMapperConfigurationExpression>) null, typeof(MappingProfile));
 
             services.AddRouting(options => options.LowercaseUrls = true);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
