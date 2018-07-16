@@ -7,7 +7,8 @@
     "Complexity": 120,
     "DateCreated": "2018-06-17T21:00:04.7682992+02:00",
     "DateModified": "2018-06-17T21:59:02.703971+02:00",
-    "Description": null
+    "Description": null,
+    "ContextId": null
   },
   {
     "TodoId": "2ef4ddc4117646f4a3c4937a74ee6787",
@@ -17,7 +18,8 @@
     "Complexity": 60,
     "DateCreated": "2018-06-17T21:11:12.7215762+02:00",
     "DateModified": "2018-07-12T18:11:28.3035413+02:00",
-    "Description": null
+    "Description": null,
+    "ContextId": null
   },
   {
     "TodoId": "cb3ca4572e77410ea1e223a9f59a53c0",
@@ -27,7 +29,8 @@
     "Complexity": 10,
     "DateCreated": "2018-06-17T21:13:09.9118395+02:00",
     "DateModified": "2018-07-13T09:58:24.3903018+02:00",
-    "Description": null
+    "Description": null,
+    "ContextId": null
   },
   {
     "TodoId": "4e9fa46ab8374cbf83887c3d495afdf0",
@@ -37,7 +40,8 @@
     "Complexity": 30,
     "DateCreated": "2018-06-17T21:13:18.8578447+02:00",
     "DateModified": "2018-06-17T22:02:57.4878747+02:00",
-    "Description": null
+    "Description": null,
+    "ContextId": null
   },
   {
     "TodoId": "07f92c09d7424c30a0512bcff62ef6d7",
@@ -47,17 +51,19 @@
     "Complexity": 120,
     "DateCreated": "2018-06-17T21:13:30.9339114+02:00",
     "DateModified": "2018-07-13T10:59:45.8705649+02:00",
-    "Description": null
+    "Description": null,
+    "ContextId": null
   },
   {
     "TodoId": "4e6c106cb2a245b1abffeffda244791d",
     "Completed": false,
-    "Score": 4,
+    "Score": 5,
     "Title": "Todo has a context",
     "Complexity": 120,
     "DateCreated": "2018-06-17T21:13:37.4281675+02:00",
-    "DateModified": "2018-07-13T16:59:47.1158376+02:00",
-    "Description": null
+    "DateModified": "2018-07-16T14:18:47.8538297+02:00",
+    "Description": null,
+    "ContextId": null
   },
   {
     "TodoId": "d0e33314ec1d4e45a2e32cba9ce5bb46",
@@ -67,7 +73,8 @@
     "Complexity": 60,
     "DateCreated": "2018-06-17T21:13:49.6471666+02:00",
     "DateModified": "2018-07-13T10:58:12.6617947+02:00",
-    "Description": "Je suis une description."
+    "Description": "Je suis une description.",
+    "ContextId": null
   },
   {
     "TodoId": "a75ea1451c314ff9bb479eebc8476a5b",
@@ -77,7 +84,8 @@
     "Complexity": 120,
     "DateCreated": "2018-06-17T21:14:13.2495004+02:00",
     "DateModified": "2018-06-17T22:02:43.6653238+02:00",
-    "Description": null
+    "Description": null,
+    "ContextId": null
   },
   {
     "TodoId": "c16aa348538f4f4a9d945c93de48e6b2",
@@ -87,7 +95,8 @@
     "Complexity": 30,
     "DateCreated": "2018-06-17T21:14:27.689586+02:00",
     "DateModified": "2018-06-17T22:02:50.3168808+02:00",
-    "Description": null
+    "Description": null,
+    "ContextId": null
   },
   {
     "TodoId": "b142fa5bc22044e68c26e4a913452d22",
@@ -97,7 +106,8 @@
     "Complexity": 20,
     "DateCreated": "2018-06-17T21:14:56.0678692+02:00",
     "DateModified": "2018-06-17T22:02:12.2096062+02:00",
-    "Description": null
+    "Description": null,
+    "ContextId": null
   },
   {
     "TodoId": "60708a3b06d44c09a534178d3c7c08e3",
@@ -107,7 +117,8 @@
     "Complexity": 60,
     "DateCreated": "2018-07-12T17:52:29.1350456+02:00",
     "DateModified": "2018-07-12T17:55:19.0633645+02:00",
-    "Description": null
+    "Description": null,
+    "ContextId": null
   },
   {
     "TodoId": "d4dfcbade72c4a37b1bd5eb67d16aca4",
@@ -117,7 +128,8 @@
     "Complexity": 19,
     "DateCreated": "2018-07-12T17:58:50.2232448+02:00",
     "DateModified": "2018-07-12T18:11:25.197446+02:00",
-    "Description": null
+    "Description": null,
+    "ContextId": null
   },
   {
     "TodoId": "a9822a57201043329034b00f09feee80",
@@ -127,7 +139,8 @@
     "Complexity": 60,
     "DateCreated": "2018-07-12T18:11:17.555586+02:00",
     "DateModified": "2018-07-16T13:45:51.9402553+02:00",
-    "Description": null
+    "Description": null,
+    "ContextId": null
   },
   {
     "TodoId": "e7af9847a6734e1082268011f4f93dc5",
@@ -137,7 +150,8 @@
     "Complexity": 0,
     "DateCreated": "2018-07-13T17:28:36.4812073+02:00",
     "DateModified": "2018-07-16T13:45:48.529666+02:00",
-    "Description": null
+    "Description": null,
+    "ContextId": null
   },
   {
     "TodoId": "a4b208cdbea442f68fcf453b2fb683da",
@@ -147,6 +161,7 @@
     "Complexity": 0,
     "DateCreated": "2018-07-13T17:29:24.8153971+02:00",
     "DateModified": "2018-07-16T13:45:49.7235377+02:00",
-    "Description": null
+    "Description": null,
+    "ContextId": null
   }
 ]
