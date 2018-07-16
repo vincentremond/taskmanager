@@ -12,6 +12,6 @@ namespace TaskManager.Models
         public DateTimeOffset DateCreated { get; set; }
         public DateTimeOffset DateModified { get; set; }
         public string Description { get; set; }
-        public string ContextId { get; set; }
+        public Context Context { get; set; }
     }
 }
