@@ -62,8 +62,7 @@ namespace TaskManager.Web.Controllers
         public ActionResult Edit(string id)
         {
             var model = _todoViewModelBuilder.Edit(id);
-            ViewData["Contexts"] = new SelectList(_contextViewModelBuilder.GetAll(), "ContextId", "Title", model.ContextId);
-            return View(model);
+            return EnrichEdit(model);
         }
 
         [HttpPost]
@@ -72,12 +71,18 @@ namespace TaskManager.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                return EnrichEdit(model);
             }
 
-            _todoViewModelBuilder.Update(model);
+            _todoViewModelBuilder.Update(model.Item);
 
             return RedirectToAction(nameof(Index));
+        }
+
+        private ActionResult EnrichEdit(Edit model)
+        {
+            model.Contexts = new SelectList(_contextViewModelBuilder.GetAll(), "ContextId", "Title", model.Item.ContextId);
+            return View(model);
         }
     }
 }

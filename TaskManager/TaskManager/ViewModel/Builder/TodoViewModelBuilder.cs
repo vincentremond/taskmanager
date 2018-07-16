@@ -44,16 +44,19 @@ namespace TaskManager.ViewModel.Builder
             var todo = _todoBusiness.Get(id);
             var result = new Edit
             {
-                TodoId = todo.TodoId,
-                Title = todo.Title,
-                Complexity = todo.Complexity,
-                Description = todo.Description,
-                ContextId = todo.Context?.ContextId,
+                Item = new Edit.Todo
+                {
+                    TodoId = todo.TodoId,
+                    Title = todo.Title,
+                    Complexity = todo.Complexity,
+                    Description = todo.Description,
+                    ContextId = todo.Context?.ContextId,
+                }
             };
             return result;
         }
 
-        public void Update(Edit model)
+        public void Update(Edit.Todo model)
         {
             var todo = _todoBusiness.Get(model.TodoId);
             var context = _contextBusiness.Get(model.ContextId);
