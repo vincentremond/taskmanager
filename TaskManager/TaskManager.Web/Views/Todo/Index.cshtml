@@ -2,6 +2,13 @@
 @{
     ViewData["Title"] = "All todos";
 }
+@if (Model.Drafts.Count > 0)
+{
+    <h3>@Model.Drafts.Count todos as draft</h3>
+    <a asp-action="Edit" asp-route-id="@Model.Drafts.FirstTodoId" class="btn btn-default">Enrich</a>
+    <hr />
+}
+
 <a class="btn btn-default" asp-action="Add">Add</a>
 <ul>
     @foreach (var x in Model.Items)
@@ -11,7 +18,7 @@
             <a asp-action="ScoreUp" asp-route-id="@x.TodoId">👍</a>
             <a asp-action="ScoreDown" asp-route-id="@x.TodoId">👎</a>
             <a asp-action="Edit" asp-route-id="@x.TodoId">📂</a>
-            [@x.MetaScore.ToString("0.0")] @x.Title
+            [@x.MetaScore.ToString("0.0")] @x.Title @@@x.Context
         </li>
     }
 </ul>
