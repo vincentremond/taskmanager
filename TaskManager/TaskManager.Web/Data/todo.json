@@ -1,7 +1,7 @@
 [
   {
     "TodoId": "8d27ddc81cc44ddcba1947d870383f60",
-    "Status": 2,
+    "Completed": false,
     "Score": -2,
     "Title": "Async",
     "Complexity": 120,
@@ -11,7 +11,7 @@
   },
   {
     "TodoId": "2ef4ddc4117646f4a3c4937a74ee6787",
-    "Status": 3,
+    "Completed": true,
     "Score": 0,
     "Title": "Todo as draft before active",
     "Complexity": 60,
@@ -21,9 +21,9 @@
   },
   {
     "TodoId": "cb3ca4572e77410ea1e223a9f59a53c0",
-    "Status": 3,
+    "Completed": true,
     "Score": 2,
-    "Title": "Todo must have a duration",
+    "Title": "Todo must have a complexity",
     "Complexity": 10,
     "DateCreated": "2018-06-17T21:13:09.9118395+02:00",
     "DateModified": "2018-07-13T09:58:24.3903018+02:00",
@@ -31,7 +31,7 @@
   },
   {
     "TodoId": "4e9fa46ab8374cbf83887c3d495afdf0",
-    "Status": 2,
+    "Completed": false,
     "Score": -1,
     "Title": "Todo has an url",
     "Complexity": 30,
@@ -41,7 +41,7 @@
   },
   {
     "TodoId": "07f92c09d7424c30a0512bcff62ef6d7",
-    "Status": 2,
+    "Completed": false,
     "Score": 1,
     "Title": "Todo has a project",
     "Complexity": 120,
@@ -51,7 +51,7 @@
   },
   {
     "TodoId": "4e6c106cb2a245b1abffeffda244791d",
-    "Status": 2,
+    "Completed": false,
     "Score": 4,
     "Title": "Todo has a context",
     "Complexity": 120,
@@ -61,7 +61,7 @@
   },
   {
     "TodoId": "d0e33314ec1d4e45a2e32cba9ce5bb46",
-    "Status": 3,
+    "Completed": true,
     "Score": 1,
     "Title": "Todo has a description",
     "Complexity": 60,
@@ -71,7 +71,7 @@
   },
   {
     "TodoId": "a75ea1451c314ff9bb479eebc8476a5b",
-    "Status": 2,
+    "Completed": false,
     "Score": -1,
     "Title": "Todos not modified since 7 days should be reviewed",
     "Complexity": 120,
@@ -81,7 +81,7 @@
   },
   {
     "TodoId": "c16aa348538f4f4a9d945c93de48e6b2",
-    "Status": 2,
+    "Completed": false,
     "Score": -3,
     "Title": "Todo can be deleted",
     "Complexity": 30,
@@ -91,7 +91,7 @@
   },
   {
     "TodoId": "b142fa5bc22044e68c26e4a913452d22",
-    "Status": 3,
+    "Completed": true,
     "Score": 1,
     "Title": "Enriched todos",
     "Complexity": 20,
@@ -101,7 +101,7 @@
   },
   {
     "TodoId": "60708a3b06d44c09a534178d3c7c08e3",
-    "Status": 3,
+    "Completed": true,
     "Score": 3,
     "Title": "Todo must be editable",
     "Complexity": 60,
@@ -111,7 +111,7 @@
   },
   {
     "TodoId": "d4dfcbade72c4a37b1bd5eb67d16aca4",
-    "Status": 3,
+    "Completed": true,
     "Score": 0,
     "Title": "I am a draft",
     "Complexity": 19,
@@ -121,32 +121,32 @@
   },
   {
     "TodoId": "a9822a57201043329034b00f09feee80",
-    "Status": 1,
+    "Completed": true,
     "Score": 0,
     "Title": "no i am a draft !!!",
     "Complexity": 60,
     "DateCreated": "2018-07-12T18:11:17.555586+02:00",
-    "DateModified": "2018-07-12T18:11:17.555592+02:00",
+    "DateModified": "2018-07-16T13:45:51.9402553+02:00",
     "Description": null
   },
   {
     "TodoId": "e7af9847a6734e1082268011f4f93dc5",
-    "Status": 1,
+    "Completed": true,
     "Score": 0,
     "Title": "PC",
     "Complexity": 0,
     "DateCreated": "2018-07-13T17:28:36.4812073+02:00",
-    "DateModified": "2018-07-13T17:28:36.4814772+02:00",
+    "DateModified": "2018-07-16T13:45:48.529666+02:00",
     "Description": null
   },
   {
     "TodoId": "a4b208cdbea442f68fcf453b2fb683da",
-    "Status": 1,
+    "Completed": true,
     "Score": 0,
     "Title": "fgsdgdf",
     "Complexity": 0,
     "DateCreated": "2018-07-13T17:29:24.8153971+02:00",
-    "DateModified": "2018-07-13T17:29:24.8154071+02:00",
+    "DateModified": "2018-07-16T13:45:49.7235377+02:00",
     "Description": null
   }
 ]

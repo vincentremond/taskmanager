@@ -27,7 +27,7 @@ namespace TaskManager.Data.Json
         {
             using (var todos = _fileRepository.GetDataAsReadOnly())
             {
-                return todos.Data.Where(t => t.Status == TodoStatus.Active).ToList();
+                return todos.Data.Where(t => !t.Completed).ToList();
             }
         }
 
