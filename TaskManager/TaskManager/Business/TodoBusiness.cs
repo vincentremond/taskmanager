@@ -37,7 +37,7 @@ namespace TaskManager.Business
         public void Complete(string todoId)
         {
             var todo = _todoRepository.Get(todoId);
-            todo.Status = TodoStatus.Completed;
+            todo.Completed = true;
             SaveChanges(todo);
         }
 
@@ -46,7 +46,7 @@ namespace TaskManager.Business
             var todo = new Todo
             {
                 TodoId = Guid.NewGuid().ToString("N"),
-                Status = TodoStatus.Draft,
+                Completed = false,
                 Score = 0,
                 Title = title,
                 DateCreated = DateTimeOffset.Now,
@@ -65,26 +65,7 @@ namespace TaskManager.Business
         public void SaveChanges(Todo todo)
         {
             todo.DateModified = DateTimeOffset.Now;
-            if (todo.Status == TodoStatus.Draft && HasMandatoryFields(todo))
-            {
-                todo.Status = TodoStatus.Active;
-            }
             _todoRepository.Upsert(todo);
-        }
-
-        private bool HasMandatoryFields(Todo todo)
-        {
-            if (string.IsNullOrWhiteSpace(todo.Title))
-            {
-                return false;
-            }
-
-            if (!(todo.Complexity > 0))
-            {
-                return false;
-            }
-
-            return true;
         }
     }
 }
