@@ -1,7 +1,9 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using TaskManager.Contract.Business;
 using TaskManager.Contract.ViewModel.Builder;
 using TaskManager.Contract.ViewModel.Model.Context;
+using TaskManager.Models;
 
 namespace TaskManager.ViewModel.Builder
 {
@@ -49,6 +51,11 @@ namespace TaskManager.ViewModel.Builder
         public void Delete(string contextId)
         {
             _contextBusiness.Delete(contextId);
+        }
+
+        public IEnumerable<Context> GetAll()
+        {
+            return _contextBusiness.GetAll();
         }
 
         public void Create(string title)
