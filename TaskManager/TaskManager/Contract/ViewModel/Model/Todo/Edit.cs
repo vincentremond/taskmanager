@@ -11,5 +11,6 @@ namespace TaskManager.Contract.ViewModel.Model.Todo
         [Required]
         public int Complexity { get; set; }
         public string Description { get; set; }
+        public string ContextId { get; set; }
     }
 }

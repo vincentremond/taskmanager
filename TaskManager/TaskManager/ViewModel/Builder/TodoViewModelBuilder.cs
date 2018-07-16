@@ -48,6 +48,7 @@ namespace TaskManager.ViewModel.Builder
             todo.Title = model.Title;
             todo.Complexity = model.Complexity;
             todo.Description = model.Description;
+            todo.ContextId = model.ContextId;
             _todoBusiness.SaveChanges(todo);
         }
 
