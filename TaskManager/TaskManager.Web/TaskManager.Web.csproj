@@ -11,8 +11,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\TaskManager.Contract.ViewModel\TaskManager.Contract.ViewModel.csproj" />
 		<ProjectReference Include="..\TaskManager.Web.Bootstrap\TaskManager.Web.Bootstrap.csproj" />
+		<ProjectReference Include="..\TaskManager\TaskManager.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
