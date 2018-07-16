@@ -71,7 +71,7 @@ namespace TaskManager.Data.Json
             }
 
             var result = _mapper.Map<JsonTodo>(input);
-            result.ContextId = input.Context.ContextId;
+            result.ContextId = input.Context?.ContextId;
             return result;
         }
     }
