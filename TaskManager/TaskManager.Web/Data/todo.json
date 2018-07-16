@@ -46,11 +46,11 @@
   {
     "TodoId": "07f92c09d7424c30a0512bcff62ef6d7",
     "Completed": false,
-    "Score": 2,
+    "Score": 3,
     "Title": "Todo has a project",
     "Complexity": 120,
     "DateCreated": "2018-06-17T21:13:30.9339114+02:00",
-    "DateModified": "2018-07-16T16:43:14.2935058+02:00",
+    "DateModified": "2018-07-16T18:04:11.6420456+02:00",
     "Description": null,
     "ContextId": "09f0c993f62342a486f889310b8de858"
   },
@@ -171,7 +171,7 @@
     "Title": "Reference date",
     "Complexity": 240,
     "DateCreated": "2018-07-16T15:52:29.4970398+02:00",
-    "DateModified": "2018-07-16T15:52:47.9410492+02:00",
+    "DateModified": "2018-07-16T18:03:08.1060283+02:00",
     "Description": null,
     "ContextId": "6e43e27aeb1544fd901a8c34ac812e81"
   }
