@@ -12,12 +12,18 @@ namespace TaskManager.Data.Json
     {
         private readonly IMapper _mapper;
         private readonly IContextRepository _contextRepository;
+        private readonly IProjectRepository _projectRepository;
         private readonly JsonFileRepository<JsonTodo> _fileRepository;
 
-        public JsonTodoRepository(IHostingEnvironment hostingEnvironment, IMapper mapper, IContextRepository contextRepository)
+        public JsonTodoRepository(IHostingEnvironment hostingEnvironment
+            , IMapper mapper
+            , IContextRepository contextRepository
+            , IProjectRepository projectRepository
+            )
         {
             _mapper = mapper;
             _contextRepository = contextRepository;
+            _projectRepository = projectRepository;
             _fileRepository = new JsonFileRepository<JsonTodo>(hostingEnvironment, "todo");
         }
 
@@ -26,7 +32,8 @@ namespace TaskManager.Data.Json
             using (var todos = _fileRepository.GetDataAsReadOnly())
             {
                 var contexts = _contextRepository.GetAll();
-                return Convert(todos.Data.SingleOrDefault(t => t.TodoId == todoId), contexts);
+                var projects = _projectRepository.GetAll();
+                return Convert(todos.Data.SingleOrDefault(t => t.TodoId == todoId), contexts, projects);
             }
         }
 
@@ -35,10 +42,11 @@ namespace TaskManager.Data.Json
             using (var todos = _fileRepository.GetDataAsReadOnly())
             {
                 var contexts = _contextRepository.GetAll();
+                var projects = _projectRepository.GetAll();
                 return todos
                     .Data
                     .Where(t => !t.Completed)
-                    .Select(j => Convert(j, contexts))
+                    .Select(j => Convert(j, contexts, projects))
                     .ToList();
             }
         }
@@ -51,7 +59,7 @@ namespace TaskManager.Data.Json
             }
         }
 
-        private Todo Convert(JsonTodo input, IEnumerable<Context> contexts)
+        private Todo Convert(JsonTodo input, IEnumerable<Context> contexts, IEnumerable<Project> projects)
         {
             if (input == null)
             {
@@ -60,6 +68,7 @@ namespace TaskManager.Data.Json
             
             var result = _mapper.Map<Todo>(input);
             result.Context = contexts.SingleOrDefault(c => c.ContextId == input.ContextId);
+            result.Project = projects.SingleOrDefault(c => c.ProjectId == input.ProjectId);
             return result;
         }
 
@@ -72,6 +81,7 @@ namespace TaskManager.Data.Json
 
             var result = _mapper.Map<JsonTodo>(input);
             result.ContextId = input.Context?.ContextId;
+            result.ProjectId = input.Project?.ProjectId;
             return result;
         }
     }
