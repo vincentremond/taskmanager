@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore.Internal;
 using TaskManager.Contract.ViewModel.Builder;
 using TaskManager.Contract.ViewModel.Model.Todo;
 
@@ -10,11 +10,13 @@ namespace TaskManager.Web.Controllers
     {
         private readonly ITodoViewModelBuilder _todoViewModelBuilder;
         private readonly IContextViewModelBuilder _contextViewModelBuilder;
+        private readonly IMapper _mapper;
 
-        public TodoController(ITodoViewModelBuilder todoViewModelBuilder, IContextViewModelBuilder contextViewModelBuilder)
+        public TodoController(ITodoViewModelBuilder todoViewModelBuilder, IContextViewModelBuilder contextViewModelBuilder, IMapper mapper)
         {
             _todoViewModelBuilder = todoViewModelBuilder;
             _contextViewModelBuilder = contextViewModelBuilder;
+            _mapper = mapper;
         }
 
         // GET: Todo
@@ -74,14 +76,18 @@ namespace TaskManager.Web.Controllers
                 return EnrichEdit(model);
             }
 
-            _todoViewModelBuilder.Update(model.Item);
+            _todoViewModelBuilder.Update(model);
 
             return RedirectToAction(nameof(Index));
         }
 
         private ActionResult EnrichEdit(Edit model)
         {
-            model.Contexts = new SelectList(_contextViewModelBuilder.GetAll(), "ContextId", "Title", model.Item.ContextId);
+            var newModel = _mapper.Map<EditViewModel>(model);
+            newModel.ViewData = new EditViewModel.Data
+            {
+                Contexts = new SelectList(_contextViewModelBuilder.GetAll(), "ContextId", "Title", model.ContextId),
+            };
             return View(model);
         }
     }

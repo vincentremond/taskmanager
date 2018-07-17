@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using TaskManager.Contract.Business;
 using TaskManager.Contract.ViewModel.Builder;
 using TaskManager.Contract.ViewModel.Model.Todo;
@@ -42,21 +43,19 @@ namespace TaskManager.ViewModel.Builder
         public Edit Edit(string id)
         {
             var todo = _todoBusiness.Get(id);
-            var result = new Edit
+            var contexts = _contextBusiness.GetAll();
+            var result = new EditViewModel
             {
-                Item = new Edit.Todo
-                {
-                    TodoId = todo.TodoId,
-                    Title = todo.Title,
-                    Complexity = todo.Complexity,
-                    Description = todo.Description,
-                    ContextId = todo.Context?.ContextId,
-                }
+                TodoId = todo.TodoId,
+                Title = todo.Title,
+                Complexity = todo.Complexity,
+                Description = todo.Description,
+                ContextId = todo.Context?.ContextId,
             };
             return result;
         }
 
-        public void Update(Edit.Todo model)
+        public void Update(Edit model)
         {
             var todo = _todoBusiness.Get(model.TodoId);
             var context = _contextBusiness.Get(model.ContextId);
