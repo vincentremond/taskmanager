@@ -1,0 +1,12 @@
+﻿using System;
+
+namespace TaskManager.Models
+{
+    public class Project
+    {
+        public string ProjectId { get; set; }
+        public string Title { get; set; }
+        public DateTimeOffset DateCreated { get; set; }
+        public DateTimeOffset DateModified { get; set; }
+    }
+}

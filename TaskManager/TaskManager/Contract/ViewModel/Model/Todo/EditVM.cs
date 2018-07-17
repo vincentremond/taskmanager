@@ -11,6 +11,7 @@ namespace TaskManager.Contract.ViewModel.Model.Todo
         public class Data
         {
             public IEnumerable<SelectListItem> Contexts { get; set; }
+            public IEnumerable<SelectListItem> Projects { get; set; }
         }
     }
 }
