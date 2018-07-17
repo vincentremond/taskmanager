@@ -57,7 +57,7 @@ namespace TaskManager.Data.Json
             {
                 return null;
             }
-
+            
             var result = _mapper.Map<Todo>(input);
             result.Context = contexts.SingleOrDefault(c => c.ContextId == input.ContextId);
             return result;
@@ -71,6 +71,7 @@ namespace TaskManager.Data.Json
             }
 
             var result = _mapper.Map<JsonTodo>(input);
+            result.ContextId = input.Context?.ContextId;
             return result;
         }
     }

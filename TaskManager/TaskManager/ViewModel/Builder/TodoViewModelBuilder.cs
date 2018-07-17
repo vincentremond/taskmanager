@@ -8,10 +8,12 @@ namespace TaskManager.ViewModel.Builder
     public class TodoViewModelBuilder : ITodoViewModelBuilder
     {
         private readonly ITodoBusiness _todoBusiness;
+        private readonly IContextBusiness _contextBusiness;
 
-        public TodoViewModelBuilder(ITodoBusiness todoBusiness)
+        public TodoViewModelBuilder(ITodoBusiness todoBusiness, IContextBusiness contextBusiness)
         {
             _todoBusiness = todoBusiness;
+            _contextBusiness = contextBusiness;
         }
 
         public Index Index()
@@ -19,12 +21,20 @@ namespace TaskManager.ViewModel.Builder
             var todos = _todoBusiness.GetAllActives();
             var result = new Index
             {
-                Items = todos.Select(t => new Index.Item()
+                Drafts = new Index.DraftInfos
                 {
-                    TodoId = t.TodoId,
-                    Title = t.Title,
-                    MetaScore = t.MetaScore,
-                }).ToList()
+                    Count = todos.Count(t => t.IsDraft),
+                    FirstTodoId = todos.FirstOrDefault(t => t.IsDraft)?.TodoId,
+                },
+                Items = todos
+                .Where(t => !t.IsDraft)
+                    .Select(t => new Index.Item()
+                    {
+                        TodoId = t.TodoId,
+                        Title = t.Title,
+                        MetaScore = t.MetaScore,
+                        Context = t.Context.Title,
+                    }).ToList()
             };
             return result;
         }
@@ -34,20 +44,26 @@ namespace TaskManager.ViewModel.Builder
             var todo = _todoBusiness.Get(id);
             var result = new Edit
             {
-                TodoId = todo.TodoId,
-                Title = todo.Title,
-                Complexity = todo.Complexity,
-                Description = todo.Description,
+                Item = new Edit.Todo
+                {
+                    TodoId = todo.TodoId,
+                    Title = todo.Title,
+                    Complexity = todo.Complexity,
+                    Description = todo.Description,
+                    ContextId = todo.Context?.ContextId,
+                }
             };
             return result;
         }
 
-        public void Update(Edit model)
+        public void Update(Edit.Todo model)
         {
             var todo = _todoBusiness.Get(model.TodoId);
+            var context = _contextBusiness.Get(model.ContextId);
             todo.Title = model.Title;
             todo.Complexity = model.Complexity;
             todo.Description = model.Description;
+            todo.Context = context;
             _todoBusiness.SaveChanges(todo);
         }
 
