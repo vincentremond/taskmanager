@@ -45,6 +45,7 @@ namespace TaskManager.ViewModel.Builder
                         MetaScore = t.MetaScore,
                         Context = t.Context.Title,
                         Project = t.Project.Title,
+                        Url = t.Url,
                     }).ToList()
             };
             return result;
@@ -61,6 +62,7 @@ namespace TaskManager.ViewModel.Builder
                 Description = todo.Description,
                 ContextId = todo.Context?.ContextId,
                 ProjectId = todo.Project?.ProjectId,
+                Url = todo.Url,
             };
             return result;
         }
@@ -86,6 +88,7 @@ namespace TaskManager.ViewModel.Builder
             todo.Description = model.Description;
             todo.Context = context;
             todo.Project = project;
+            todo.Url = model.Url;
             _todoBusiness.SaveChanges(todo);
         }
 

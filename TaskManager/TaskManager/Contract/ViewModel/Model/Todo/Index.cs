@@ -14,6 +14,7 @@ namespace TaskManager.Contract.ViewModel.Model.Todo
             public string Title { get; set; }
             public string Context { get; set; }
             public string Project { get; set; }
+            public string Url { get; set; }
         }
 
         public class DraftInfos
