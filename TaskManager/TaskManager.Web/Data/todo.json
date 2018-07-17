@@ -49,12 +49,12 @@
   },
   {
     "TodoId": "07f92c09d7424c30a0512bcff62ef6d7",
-    "Completed": false,
+    "Completed": true,
     "Score": 3,
     "Title": "Todo has a project",
     "Complexity": 120,
     "DateCreated": "2018-06-17T21:13:30.9339114+02:00",
-    "DateModified": "2018-07-17T14:50:01.1298847+02:00",
+    "DateModified": "2018-07-17T15:03:40.736257+02:00",
     "Description": null,
     "ContextId": "09f0c993f62342a486f889310b8de858",
     "ProjectId": "3303752d4ac4422fafb0adbc4d56a300"
