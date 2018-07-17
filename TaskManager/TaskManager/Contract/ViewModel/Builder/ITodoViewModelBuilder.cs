@@ -6,7 +6,7 @@ namespace TaskManager.Contract.ViewModel.Builder
     {
         Index Index();
         Edit Edit(string todoId);
-        void Update(Edit.Todo model);
+        void Update(Edit model);
         void Complete(string todoId);
         void IncrementScore(string todoId, int increment);
         void Create(string title);
