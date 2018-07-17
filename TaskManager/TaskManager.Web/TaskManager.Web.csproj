@@ -16,7 +16,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Data\" />
+	  <Content Update="Views\Project\Add.cshtml">
+	    <Pack>$(IncludeRazorContentInPack)</Pack>
+	  </Content>
+	  <Content Update="Views\Project\Edit.cshtml">
+	    <Pack>$(IncludeRazorContentInPack)</Pack>
+	  </Content>
+	  <Content Update="Views\Project\Index.cshtml">
+	    <Pack>$(IncludeRazorContentInPack)</Pack>
+	  </Content>
 	</ItemGroup>
 
 </Project>

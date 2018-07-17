@@ -13,6 +13,7 @@ namespace TaskManager.Contract.ViewModel.Model.Todo
             public decimal MetaScore { get; set; }
             public string Title { get; set; }
             public string Context { get; set; }
+            public string Project { get; set; }
         }
 
         public class DraftInfos

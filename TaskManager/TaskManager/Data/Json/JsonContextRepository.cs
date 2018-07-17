@@ -12,7 +12,7 @@ namespace TaskManager.Data.Json
 
         public JsonContextRepository(IHostingEnvironment hostingEnvironment)
         {
-            _fileRepository = new JsonFileRepository<Context>(hostingEnvironment, "context");
+            _fileRepository = new JsonFileRepository<Context>(hostingEnvironment, "contexts");
         }
 
         public Context Get(string contextId)
