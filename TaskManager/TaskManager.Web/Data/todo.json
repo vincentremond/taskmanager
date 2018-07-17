@@ -6,9 +6,9 @@
     "Title": "Async",
     "Complexity": 120,
     "DateCreated": "2018-06-17T21:00:04.7682992+02:00",
-    "DateModified": "2018-06-17T21:59:02.703971+02:00",
+    "DateModified": "2018-07-16T17:00:11.6951672+02:00",
     "Description": null,
-    "ContextId": null
+    "ContextId": "09f0c993f62342a486f889310b8de858"
   },
   {
     "TodoId": "2ef4ddc4117646f4a3c4937a74ee6787",
@@ -39,31 +39,31 @@
     "Title": "Todo has an url",
     "Complexity": 30,
     "DateCreated": "2018-06-17T21:13:18.8578447+02:00",
-    "DateModified": "2018-06-17T22:02:57.4878747+02:00",
+    "DateModified": "2018-07-16T16:43:18.8530413+02:00",
     "Description": null,
-    "ContextId": null
+    "ContextId": "09f0c993f62342a486f889310b8de858"
   },
   {
     "TodoId": "07f92c09d7424c30a0512bcff62ef6d7",
     "Completed": false,
-    "Score": 1,
+    "Score": 3,
     "Title": "Todo has a project",
     "Complexity": 120,
     "DateCreated": "2018-06-17T21:13:30.9339114+02:00",
-    "DateModified": "2018-07-13T10:59:45.8705649+02:00",
+    "DateModified": "2018-07-16T18:04:11.6420456+02:00",
     "Description": null,
-    "ContextId": null
+    "ContextId": "09f0c993f62342a486f889310b8de858"
   },
   {
     "TodoId": "4e6c106cb2a245b1abffeffda244791d",
-    "Completed": false,
+    "Completed": true,
     "Score": 5,
     "Title": "Todo has a context",
     "Complexity": 120,
     "DateCreated": "2018-06-17T21:13:37.4281675+02:00",
-    "DateModified": "2018-07-16T14:18:47.8538297+02:00",
+    "DateModified": "2018-07-16T15:51:25.4455588+02:00",
     "Description": null,
-    "ContextId": null
+    "ContextId": "09f0c993f62342a486f889310b8de858"
   },
   {
     "TodoId": "d0e33314ec1d4e45a2e32cba9ce5bb46",
@@ -83,9 +83,9 @@
     "Title": "Todos not modified since 7 days should be reviewed",
     "Complexity": 120,
     "DateCreated": "2018-06-17T21:14:13.2495004+02:00",
-    "DateModified": "2018-06-17T22:02:43.6653238+02:00",
+    "DateModified": "2018-07-16T16:43:27.9113583+02:00",
     "Description": null,
-    "ContextId": null
+    "ContextId": "09f0c993f62342a486f889310b8de858"
   },
   {
     "TodoId": "c16aa348538f4f4a9d945c93de48e6b2",
@@ -94,9 +94,9 @@
     "Title": "Todo can be deleted",
     "Complexity": 30,
     "DateCreated": "2018-06-17T21:14:27.689586+02:00",
-    "DateModified": "2018-06-17T22:02:50.3168808+02:00",
+    "DateModified": "2018-07-16T16:43:31.5333132+02:00",
     "Description": null,
-    "ContextId": null
+    "ContextId": "09f0c993f62342a486f889310b8de858"
   },
   {
     "TodoId": "b142fa5bc22044e68c26e4a913452d22",
@@ -163,5 +163,16 @@
     "DateModified": "2018-07-16T13:45:49.7235377+02:00",
     "Description": null,
     "ContextId": null
+  },
+  {
+    "TodoId": "ab4f4d36927d41b09732ac015f8b3114",
+    "Completed": false,
+    "Score": 0,
+    "Title": "Reference date",
+    "Complexity": 240,
+    "DateCreated": "2018-07-16T15:52:29.4970398+02:00",
+    "DateModified": "2018-07-16T18:03:08.1060283+02:00",
+    "Description": null,
+    "ContextId": "6e43e27aeb1544fd901a8c34ac812e81"
   }
 ]
