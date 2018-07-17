@@ -14,5 +14,6 @@ namespace TaskManager.Data.Json.DataObjects
         public string Description { get; set; }
         public string ContextId { get; set; }
         public string ProjectId { get; set; }
+        public string Url { get; set; }
     }
 }

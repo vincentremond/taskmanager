@@ -14,6 +14,7 @@ namespace TaskManager.Models
         public string Description { get; set; }
         public Context Context { get; set; }
         public Project Project { get; set; }
+        public string Url { get; set; }
     }
 
 }
