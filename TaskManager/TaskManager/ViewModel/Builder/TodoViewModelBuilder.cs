@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using TaskManager.Contract.Business;
 using TaskManager.Contract.ViewModel.Builder;
@@ -10,11 +11,19 @@ namespace TaskManager.ViewModel.Builder
     {
         private readonly ITodoBusiness _todoBusiness;
         private readonly IContextBusiness _contextBusiness;
+        private readonly IProjectBusiness _projectBusiness;
+        private readonly IMapper _mapper;
 
-        public TodoViewModelBuilder(ITodoBusiness todoBusiness, IContextBusiness contextBusiness)
+        public TodoViewModelBuilder(ITodoBusiness todoBusiness
+            , IContextBusiness contextBusiness
+            , IProjectBusiness projectBusiness
+            , IMapper mapper
+            )
         {
             _todoBusiness = todoBusiness;
             _contextBusiness = contextBusiness;
+            _projectBusiness = projectBusiness;
+            _mapper = mapper;
         }
 
         public Index Index()
@@ -35,6 +44,7 @@ namespace TaskManager.ViewModel.Builder
                         Title = t.Title,
                         MetaScore = t.MetaScore,
                         Context = t.Context.Title,
+                        Project = t.Project.Title,
                     }).ToList()
             };
             return result;
@@ -43,26 +53,39 @@ namespace TaskManager.ViewModel.Builder
         public Edit Edit(string id)
         {
             var todo = _todoBusiness.Get(id);
-            var contexts = _contextBusiness.GetAll();
-            var result = new EditViewModel
+            var result = new Edit
             {
                 TodoId = todo.TodoId,
                 Title = todo.Title,
                 Complexity = todo.Complexity,
                 Description = todo.Description,
                 ContextId = todo.Context?.ContextId,
+                ProjectId = todo.Project?.ProjectId,
             };
             return result;
+        }
+
+        public EditViewModel EditViewModel(Edit edit)
+        {
+            var newModel = _mapper.Map<EditViewModel>(edit);
+            newModel.ViewData = new EditViewModel.Data
+            {
+                Contexts = new SelectList(_contextBusiness.GetAll(), "ContextId", "Title", edit.ContextId),
+                Projects = new SelectList(_projectBusiness.GetAll(), "ProjectId", "Title", edit.ProjectId),
+            };
+            return newModel;
         }
 
         public void Update(Edit model)
         {
             var todo = _todoBusiness.Get(model.TodoId);
             var context = _contextBusiness.Get(model.ContextId);
+            var project = _projectBusiness.Get(model.ProjectId);
             todo.Title = model.Title;
             todo.Complexity = model.Complexity;
             todo.Description = model.Description;
             todo.Context = context;
+            todo.Project = project;
             _todoBusiness.SaveChanges(todo);
         }
 

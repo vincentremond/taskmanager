@@ -20,6 +20,7 @@ namespace TaskManager.Web.Bootstrap
         static void AddBusiness(this IServiceCollection services)
         {
             services.AddTransient<IContextBusiness, ContextBusiness>();
+            services.AddTransient<IProjectBusiness, ProjectBusiness>();
             services.AddTransient<ITodoBusiness, TodoBusiness>();
             services.AddTransient<ITodoEnricher, TodoEnricher>();
         }
@@ -28,12 +29,14 @@ namespace TaskManager.Web.Bootstrap
         {
             services.AddTransient<ITodoViewModelBuilder, TodoViewModelBuilder>();
             services.AddTransient<IContextViewModelBuilder, ContextViewModelBuilder>();
+            services.AddTransient<IProjectViewModelBuilder, ProjectViewModelBuilder>();
         }
 
         static void AddDataJson(this IServiceCollection services)
         {
             services.AddTransient<ITodoRepository, JsonTodoRepository>();
             services.AddTransient<IContextRepository, JsonContextRepository>();
+            services.AddTransient<IProjectRepository, JsonProjectRepository>();
         }
     }
 }

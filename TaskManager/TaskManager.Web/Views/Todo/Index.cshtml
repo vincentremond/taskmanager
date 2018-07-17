@@ -18,7 +18,7 @@
             <a class="btn btn-default" asp-action="ScoreUp" asp-route-id="@x.TodoId">👍</a>
             <a class="btn btn-default" asp-action="ScoreDown" asp-route-id="@x.TodoId">👎</a>
             <a class="btn btn-default" asp-action="Edit" asp-route-id="@x.TodoId">📂</a>
-            [@x.MetaScore.ToString("0.0")] @x.Title @@@x.Context
+            [@x.MetaScore.ToString("0.0")] @x.Title @@@x.Context #@x.Project
         </li>
     }
 </ul>

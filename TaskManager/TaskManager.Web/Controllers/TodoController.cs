@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using TaskManager.Contract.ViewModel.Builder;
 using TaskManager.Contract.ViewModel.Model.Todo;
 
@@ -64,7 +63,7 @@ namespace TaskManager.Web.Controllers
         public ActionResult Edit(string id)
         {
             var model = _todoViewModelBuilder.Edit(id);
-            return EnrichEdit(model);
+            return View(_todoViewModelBuilder.EditViewModel(model));
         }
 
         [HttpPost]
@@ -73,23 +72,12 @@ namespace TaskManager.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return EnrichEdit(model);
+                return View(_todoViewModelBuilder.EditViewModel(model));
             }
 
             _todoViewModelBuilder.Update(model);
 
             return RedirectToAction(nameof(Index));
         }
-
-        private ActionResult EnrichEdit(Edit model)
-        {
-            var newModel = _mapper.Map<EditViewModel>(model);
-            newModel.ViewData = new EditViewModel.Data
-            {
-                Contexts = new SelectList(_contextViewModelBuilder.GetAll(), "ContextId", "Title", model.ContextId),
-            };
-            return View(model);
-        }
     }
 }
-

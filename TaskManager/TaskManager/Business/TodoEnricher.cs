@@ -37,6 +37,11 @@ namespace TaskManager.Business
                 return false;
             }
 
+            if (todo.Project == null)
+            {
+                return false;
+            }
+
             return true;
         }
     }

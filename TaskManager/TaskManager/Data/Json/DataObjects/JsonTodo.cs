@@ -13,5 +13,6 @@ namespace TaskManager.Data.Json.DataObjects
         public DateTimeOffset DateModified { get; set; }
         public string Description { get; set; }
         public string ContextId { get; set; }
+        public string ProjectId { get; set; }
     }
 }
