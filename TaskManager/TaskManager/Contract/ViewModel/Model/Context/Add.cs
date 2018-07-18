@@ -6,5 +6,7 @@ namespace TaskManager.Contract.ViewModel.Model.Context
     {
         [Required]
         public string  Title { get; set; }
+        [Required, RegularExpression(Constants.ColorRegex)]
+        public string Color { get; set; }
     }
 }

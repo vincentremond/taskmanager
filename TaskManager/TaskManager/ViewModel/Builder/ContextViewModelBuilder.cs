@@ -25,6 +25,7 @@ namespace TaskManager.ViewModel.Builder
                 {
                     ContextId = t.ContextId,
                     Title = t.Title,
+                    Color = t.Color,
                 }).ToList()
             };
             return result;
@@ -37,15 +38,17 @@ namespace TaskManager.ViewModel.Builder
             {
                 ContextId = context.ContextId,
                 Title = context.Title,
+                Color = context.Color,
             };
             return result;
         }
 
         public void Update(Edit model)
         {
-            var todo = _contextBusiness.Get(model.ContextId);
-            todo.Title = model.Title;
-            _contextBusiness.SaveChanges(todo);
+            var context = _contextBusiness.Get(model.ContextId);
+            context.Title = model.Title;
+            context.Color = model.Color;
+            _contextBusiness.SaveChanges(context);
         }
 
         public void Delete(string contextId)

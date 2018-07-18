@@ -9,6 +9,7 @@ namespace TaskManager.Contract.ViewModel.Model.Project
         {
             public string ProjectId { get; set; }
             public string Title { get; set; }
+            public string Color { get; set; }
         }
     }
 }

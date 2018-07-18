@@ -20,7 +20,9 @@
         <a class="btn btn-default" target="_blank" rel="noopener noreferrer" href="@x.Url" @(string.IsNullOrWhiteSpace(x.Url) ? "disabled" : "")>🌍</a>
         <a class="btn btn-default" asp-action="Edit" asp-route-id="@x.TodoId">📂</a>
 
-        [@x.MetaScore.ToString("0.0")] @x.Title @@@x.Context #@x.Project
+        [@x.MetaScore.ToString("0.0")] @x.Title
+        <a asp-route-contextId="@x.Context.ContextId" style="background-color: @x.Context.Color">@@@x.Context.Title</a>
+        <a asp-route-projectId="@x.Project.ProjectId" style="background-color: @x.Project.Color">@@@x.Project.Title</a>
     </li>
     }
 </ul>
