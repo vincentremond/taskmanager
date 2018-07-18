@@ -35,7 +35,7 @@ namespace TaskManager.Web.Controllers
                 return View(model);
             }
 
-            _contextViewModelBuilder.Create(model.Title);
+            _contextViewModelBuilder.Create(model);
 
             return RedirectToAction(nameof(Index));
         }

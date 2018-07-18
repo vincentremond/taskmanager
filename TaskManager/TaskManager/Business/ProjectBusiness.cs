@@ -24,18 +24,6 @@ namespace TaskManager.Business
                 .ToList();
         }
 
-        public void Create(string title)
-        {
-            var project = new Project
-            {
-                ProjectId = Guid.NewGuid().ToString("N"),
-                Title = title,
-                DateCreated = DateTimeOffset.Now,
-                DateModified = DateTimeOffset.Now,
-            };
-            SaveChanges(project);
-        }
-
         public void Delete(string projectId)
         {
             _projectRepository.Delete(projectId);

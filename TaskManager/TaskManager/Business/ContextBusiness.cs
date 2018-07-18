@@ -24,18 +24,6 @@ namespace TaskManager.Business
                 .ToList();
         }
 
-        public void Create(string title)
-        {
-            var context= new Context
-            {
-                ContextId = Guid.NewGuid().ToString("N"),
-                Title = title,
-                DateCreated = DateTimeOffset.Now,
-                DateModified = DateTimeOffset.Now,
-            };
-            SaveChanges(context);
-        }
-
         public void Delete(string contextId)
         {
             _contextRepository.Delete(contextId);
