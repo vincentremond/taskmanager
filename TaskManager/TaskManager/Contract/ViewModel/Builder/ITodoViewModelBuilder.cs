@@ -4,7 +4,7 @@ namespace TaskManager.Contract.ViewModel.Builder
 {
     public interface ITodoViewModelBuilder
     {
-        Index Index();
+        Index Index(string[] context, string[] project);
         Edit Edit(string todoId);
         EditViewModel EditViewModel(Edit edit);
         void Update(Edit model);
