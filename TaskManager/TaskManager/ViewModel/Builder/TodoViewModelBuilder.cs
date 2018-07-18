@@ -43,8 +43,18 @@ namespace TaskManager.ViewModel.Builder
                         TodoId = t.TodoId,
                         Title = t.Title,
                         MetaScore = t.MetaScore,
-                        Context = t.Context.Title,
-                        Project = t.Project.Title,
+                        Context = new Index.Context
+                        {
+                            ContextId = t.Context.ContextId,
+                            Title = t.Context.Title,
+                            Color = t.Context.Color,
+                        },
+                        Project = new Index.Project()
+                        {
+                            ProjectId = t.Project.ProjectId,
+                            Title = t.Project.Title,
+                            Color = t.Project.Color,
+                        },
                         Url = t.Url,
                     }).ToList()
             };

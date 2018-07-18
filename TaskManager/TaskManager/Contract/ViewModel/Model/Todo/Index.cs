@@ -12,9 +12,23 @@ namespace TaskManager.Contract.ViewModel.Model.Todo
             public string TodoId { get; set; }
             public decimal MetaScore { get; set; }
             public string Title { get; set; }
-            public string Context { get; set; }
-            public string Project { get; set; }
+            public Context Context { get; set; }
+            public Project Project { get; set; }
             public string Url { get; set; }
+        }
+
+        public class Context
+        {
+            public string ContextId { get; set; }
+            public string Title { get; set; }
+            public string Color { get; set; }
+        }
+
+        public class Project
+        {
+            public string ProjectId { get; set; }
+            public string Title { get; set; }
+            public string Color { get; set; }
         }
 
         public class DraftInfos

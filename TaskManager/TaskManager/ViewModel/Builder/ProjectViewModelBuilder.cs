@@ -25,6 +25,7 @@ namespace TaskManager.ViewModel.Builder
                 {
                     ProjectId = t.ProjectId,
                     Title = t.Title,
+                    Color = t.Color,
                 }).ToList()
             };
             return result;
@@ -37,15 +38,17 @@ namespace TaskManager.ViewModel.Builder
             {
                 ProjectId = project.ProjectId,
                 Title = project.Title,
+                Color = project.Color,
             };
             return result;
         }
 
         public void Update(Edit model)
         {
-            var todo = _projectBusiness.Get(model.ProjectId);
-            todo.Title = model.Title;
-            _projectBusiness.SaveChanges(todo);
+            var project = _projectBusiness.Get(model.ProjectId);
+            project.Title = model.Title;
+            project.Color = model.Color;
+            _projectBusiness.SaveChanges(project);
         }
 
         public void Delete(string projectId)

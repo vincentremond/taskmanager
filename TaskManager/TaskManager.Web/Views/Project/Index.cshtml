@@ -1,15 +1,16 @@
 ﻿@model TaskManager.Contract.ViewModel.Model.Project.Index
 @{
-    ViewData["Title"] = "All projects";
+  ViewData["Title"] = "All projects";
 }
 <a class="btn btn-default" asp-action="Add">Add</a>
 <ul>
-    @foreach (var x in Model.Items)
-    {
+  @foreach (var x in Model.Items)
+  {
     <li>
-        <a asp-action="Edit" asp-route-id="@x.ProjectId">📂</a>
-        <a asp-action="Delete" asp-route-id="@x.ProjectId">✖️</a>
-        @x.Title
+      <span style="background-color: @x.Color">&nbsp;</span>
+      <a asp-action="Edit" asp-route-id="@x.ProjectId">📂</a>
+      <a asp-action="Delete" asp-route-id="@x.ProjectId">✖️</a>
+      @x.Title
     </li>
-    }
+  }
 </ul>

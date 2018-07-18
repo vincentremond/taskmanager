@@ -9,6 +9,7 @@ namespace TaskManager.Contract.ViewModel.Model.Context
         {
             public string ContextId { get; set; }
             public string Title { get; set; }
+            public string Color { get; set; }
         }
     }
 }
