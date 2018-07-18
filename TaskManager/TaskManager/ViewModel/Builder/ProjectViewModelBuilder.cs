@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using TaskManager.Contract.Business;
 using TaskManager.Contract.ViewModel.Builder;
@@ -61,9 +62,17 @@ namespace TaskManager.ViewModel.Builder
             return _projectBusiness.GetAll();
         }
 
-        public void Create(string title)
+        public void Create(Add model)
         {
-            _projectBusiness.Create(title);
+            var project = new Project
+            {
+                ProjectId = Guid.NewGuid().ToString("N"),
+                Title = model.Title,
+                Color = model.Color,
+                DateCreated = DateTimeOffset.Now,
+                DateModified = DateTimeOffset.Now,
+            };
+            _projectBusiness.SaveChanges(project);
         }
     }
 }

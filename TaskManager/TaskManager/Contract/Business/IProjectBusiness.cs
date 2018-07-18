@@ -8,7 +8,6 @@ namespace TaskManager.Contract.Business
         IEnumerable<Project> GetAll();
         Project Get(string projectId);
         void SaveChanges(Project todo);
-        void Create(string title);
         void Delete(string projectId);
     }
 }

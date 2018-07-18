@@ -7,7 +7,7 @@ namespace TaskManager.Contract.ViewModel.Builder
     public interface IContextViewModelBuilder
     {
         Index Index();
-        void Create(string title);
+        void Create(Add model);
         Edit Edit(string contextId);
         void Update(Edit model);
         void Delete(string contextId);

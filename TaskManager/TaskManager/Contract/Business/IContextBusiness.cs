@@ -8,7 +8,6 @@ namespace TaskManager.Contract.Business
         IEnumerable<Context> GetAll();
         Context Get(string contextId);
         void SaveChanges(Context todo);
-        void Create(string title);
         void Delete(string contextId);
     }
 }
