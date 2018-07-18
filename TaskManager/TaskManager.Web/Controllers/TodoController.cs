@@ -19,9 +19,9 @@ namespace TaskManager.Web.Controllers
         }
 
         // GET: Todo
-        public ActionResult Index()
+        public ActionResult Index(string[] context, string[] project)
         {
-            var model = _todoViewModelBuilder.Index();
+            var model = _todoViewModelBuilder.Index(context, project);
             return View(model);
         }
 

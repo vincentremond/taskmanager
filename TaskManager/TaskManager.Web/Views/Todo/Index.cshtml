@@ -21,8 +21,8 @@
         <a class="btn btn-default" asp-action="Edit" asp-route-id="@x.TodoId">📂</a>
 
         [@x.MetaScore.ToString("0.0")] @x.Title
-        <a asp-route-contextId="@x.Context.ContextId" style="background-color: @x.Context.Color">@@@x.Context.Title</a>
-        <a asp-route-projectId="@x.Project.ProjectId" style="background-color: @x.Project.Color">@@@x.Project.Title</a>
+        <a asp-route-context="@x.Context.ContextId" style="background-color: @x.Context.Color">@@@x.Context.Title</a>
+        <a asp-route-project="@x.Project.ProjectId" style="background-color: @x.Project.Color">@@@x.Project.Title</a>
     </li>
     }
 </ul>

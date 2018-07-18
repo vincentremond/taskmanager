@@ -26,37 +26,49 @@ namespace TaskManager.ViewModel.Builder
             _mapper = mapper;
         }
 
-        public Index Index()
+        public Index Index(string[] context, string[] project)
         {
             var todos = _todoBusiness.GetAllActives();
+
+            var drafts = todos.Where(t => t.IsDraft);
+
+            var toDisplay = todos.Where(t => !t.IsDraft);
+            if (context != null && context.Any())
+            {
+                toDisplay = toDisplay.Where(t => context.Contains(t.Context.ContextId));
+            }
+            if (project != null && project.Any())
+            {
+                toDisplay = toDisplay.Where(t => project.Contains(t.Project.ProjectId));
+            }
+
+
             var result = new Index
             {
                 Drafts = new Index.DraftInfos
                 {
-                    Count = todos.Count(t => t.IsDraft),
-                    FirstTodoId = todos.FirstOrDefault(t => t.IsDraft)?.TodoId,
+                    Count = drafts.Count(),
+                    FirstTodoId = drafts.FirstOrDefault()?.TodoId,
                 },
-                Items = todos
-                .Where(t => !t.IsDraft)
-                    .Select(t => new Index.Item()
+                Items = toDisplay.Select(t => new Index.Item()
+                {
+                    TodoId = t.TodoId,
+                    Title = t.Title,
+                    MetaScore = t.MetaScore,
+                    Context = new Index.Context
                     {
-                        TodoId = t.TodoId,
-                        Title = t.Title,
-                        MetaScore = t.MetaScore,
-                        Context = new Index.Context
-                        {
-                            ContextId = t.Context.ContextId,
-                            Title = t.Context.Title,
-                            Color = t.Context.Color,
-                        },
-                        Project = new Index.Project()
-                        {
-                            ProjectId = t.Project.ProjectId,
-                            Title = t.Project.Title,
-                            Color = t.Project.Color,
-                        },
-                        Url = t.Url,
-                    }).ToList()
+                        ContextId = t.Context.ContextId,
+                        Title = t.Context.Title,
+                        Color = t.Context.Color,
+                    },
+                    Project = new Index.Project()
+                    {
+                        ProjectId = t.Project.ProjectId,
+                        Title = t.Project.Title,
+                        Color = t.Project.Color,
+                    },
+                    Url = t.Url,
+                }).ToList()
             };
             return result;
         }
