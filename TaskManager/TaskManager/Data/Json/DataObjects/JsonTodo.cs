@@ -1,4 +1,7 @@
 ﻿using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using TaskManager.Models;
 
 namespace TaskManager.Data.Json.DataObjects
 {
@@ -15,5 +18,6 @@ namespace TaskManager.Data.Json.DataObjects
         public string ContextId { get; set; }
         public string ProjectId { get; set; }
         public string Url { get; set; }
+        public JsonRepeat Repeat { get; set; }
     }
 }

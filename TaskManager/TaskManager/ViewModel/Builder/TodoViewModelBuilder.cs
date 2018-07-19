@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using TaskManager.Contract.Business;
 using TaskManager.Contract.ViewModel.Builder;
 using TaskManager.Contract.ViewModel.Model.Todo;
+using TaskManager.Models;
 
 namespace TaskManager.ViewModel.Builder
 {
@@ -68,6 +69,7 @@ namespace TaskManager.ViewModel.Builder
                         Color = t.Project.Color,
                     },
                     Url = t.Url,
+                    HasRepeat = t.Repeat != null,
                 }).ToList()
             };
             return result;
@@ -86,6 +88,12 @@ namespace TaskManager.ViewModel.Builder
                 ProjectId = todo.Project?.ProjectId,
                 Url = todo.Url,
             };
+            if (todo.Repeat != null)
+            {
+                result.RepeatType = todo.Repeat.Type;
+                result.RepeatCount = todo.Repeat.Count;
+                result.RepeatUnit = todo.Repeat.Unit;
+            }
             return result;
         }
 
@@ -111,7 +119,25 @@ namespace TaskManager.ViewModel.Builder
             todo.Context = context;
             todo.Project = project;
             todo.Url = model.Url;
+            todo.Repeat = GetRepeat(model.RepeatType, model.RepeatCount, model.RepeatUnit);
             _todoBusiness.SaveChanges(todo);
+        }
+
+        private Repeat GetRepeat(RepeatType type, int count, RepeatUnit unit)
+        {
+            if (type == RepeatType.None
+                || count <= 0
+                || unit == RepeatUnit.Undefined)
+            {
+                return null;
+            }
+
+            return new Repeat
+            {
+                Type = type,
+                Count = count,
+                Unit = unit,
+            };
         }
 
         public void Complete(string todoId)
