@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using TaskManager.Models;
 
 namespace TaskManager.Contract.ViewModel.Model.Todo
 {
@@ -15,6 +14,7 @@ namespace TaskManager.Contract.ViewModel.Model.Todo
             public Context Context { get; set; }
             public Project Project { get; set; }
             public string Url { get; set; }
+            public bool HasRepeat { get; set; }
         }
 
         public class Context

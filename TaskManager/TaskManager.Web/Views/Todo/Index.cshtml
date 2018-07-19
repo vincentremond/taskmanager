@@ -1,28 +1,32 @@
 ﻿@model TaskManager.Contract.ViewModel.Model.Todo.Index
 @{
-    ViewData["Title"] = "All todos";
+  ViewData["Title"] = "All todos";
 }
 @if (Model.Drafts.Count > 0)
 {
-    <h3>@Model.Drafts.Count todos as draft</h3>
-    <a asp-action="Edit" asp-route-id="@Model.Drafts.FirstTodoId" class="btn btn-default">Enrich</a>
-    <hr />
+  <h3>@Model.Drafts.Count todos as draft</h3>
+  <a asp-action="Edit" asp-route-id="@Model.Drafts.FirstTodoId" class="btn btn-default">Enrich</a>
+  <hr />
 }
 
 <a class="btn btn-default" asp-action="Add">Add</a>
 <ul>
-    @foreach (var x in Model.Items)
-    {
+  @foreach (var x in Model.Items)
+  {
     <li>
-        <a class="btn btn-default" asp-action="Complete" asp-route-id="@x.TodoId">☐</a>
-        <a class="btn btn-default" asp-action="ScoreUp" asp-route-id="@x.TodoId">👍</a>
-        <a class="btn btn-default" asp-action="ScoreDown" asp-route-id="@x.TodoId">👎</a>
-        <a class="btn btn-default" target="_blank" rel="noopener noreferrer" href="@x.Url" @(string.IsNullOrWhiteSpace(x.Url) ? "disabled" : "")>🌍</a>
-        <a class="btn btn-default" asp-action="Edit" asp-route-id="@x.TodoId">📂</a>
+      <a class="btn btn-default" asp-action="Complete" asp-route-id="@x.TodoId">☐</a>
+      <a class="btn btn-default" asp-action="ScoreUp" asp-route-id="@x.TodoId">👍</a>
+      <a class="btn btn-default" asp-action="ScoreDown" asp-route-id="@x.TodoId">👎</a>
+      <a class="btn btn-default" target="_blank" rel="noopener noreferrer" href="@x.Url" @(string.IsNullOrWhiteSpace(x.Url) ? "disabled" : "")>🌍</a>
+      <a class="btn btn-default" asp-action="Edit" asp-route-id="@x.TodoId">📂</a>
 
-        [@x.MetaScore.ToString("0.0")] @x.Title
-        <a asp-route-context="@x.Context.ContextId" style="background-color: @x.Context.Color">@@@x.Context.Title</a>
-        <a asp-route-project="@x.Project.ProjectId" style="background-color: @x.Project.Color">@@@x.Project.Title</a>
+      [@x.MetaScore.ToString("0.0")] @x.Title
+      <a asp-route-context="@x.Context.ContextId" style="background-color: @x.Context.Color">@@@x.Context.Title</a>
+      <a asp-route-project="@x.Project.ProjectId" style="background-color: @x.Project.Color">@@@x.Project.Title</a>
+      @if (x.HasRepeat)
+      {
+        @("🔄")
+      }
     </li>
-    }
+  }
 </ul>

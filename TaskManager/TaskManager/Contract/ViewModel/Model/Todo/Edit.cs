@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using TaskManager.Models;
 
 namespace TaskManager.Contract.ViewModel.Model.Todo
 {
@@ -13,5 +14,8 @@ namespace TaskManager.Contract.ViewModel.Model.Todo
         public string ContextId { get; set; }
         public string ProjectId { get; set; }
         public string Url { get; set; }
+        public RepeatType RepeatType { get; set; }
+        public int RepeatCount { get; set; }
+        public RepeatUnit RepeatUnit { get; set; }
     }
 }
