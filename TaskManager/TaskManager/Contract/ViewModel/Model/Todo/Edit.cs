@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using TaskManager.Models;
 
 namespace TaskManager.Contract.ViewModel.Model.Todo
