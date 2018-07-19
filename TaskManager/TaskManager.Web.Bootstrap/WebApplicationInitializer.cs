@@ -44,6 +44,7 @@ namespace TaskManager.Web.Bootstrap
         static void AddUtilities(this IServiceCollection services)
         {
             services.AddTransient<IIdentifierProvider, IdentifierProvider>();
+            services.AddTransient<ICloneProvider, CloneProvider>();
         }
     }
 }

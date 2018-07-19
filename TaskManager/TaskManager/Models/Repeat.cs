@@ -1,5 +1,8 @@
-﻿namespace TaskManager.Models
+﻿using System;
+
+namespace TaskManager.Models
 {
+    [Serializable]
     public class Repeat
     {
         public RepeatType Type { get; set; }

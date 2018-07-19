@@ -15,17 +15,20 @@ namespace TaskManager.Business
         private readonly ITodoEnricher _todoEnricher;
         private readonly IMapper _mapper;
         private readonly IIdentifierProvider _identifierProvider;
+        private readonly ICloneProvider _cloneProvider;
 
         public TodoBusiness(ITodoRepository repository
             , ITodoEnricher enricher
             , IMapper mapper
             , IIdentifierProvider identifierProvider
+            , ICloneProvider cloneProvider
             )
         {
             _todoRepository = repository;
             _todoEnricher = enricher;
             _mapper = mapper;
             _identifierProvider = identifierProvider;
+            _cloneProvider = cloneProvider;
         }
 
         public IEnumerable<MetaTodo> GetAllActives()
@@ -50,20 +53,34 @@ namespace TaskManager.Business
 
             if (todo.Repeat != null)
             {
-                CreateRepeat(todo);
+                var newTodo = _cloneProvider.DeepClone(todo);
+                HandlerRepeat(newTodo);
             }
 
             todo.Completed = true;
             SaveChanges(todo);
         }
 
-        private void CreateRepeat(Todo todo)
+        private void HandlerRepeat(Todo newTodo)
         {
-            var newTodo = _mapper.Map<Todo>(todo);
-
+            newTodo.Completed = false;
+            newTodo.DateCreated = DateTimeOffset.Now;
             newTodo.TodoId = _identifierProvider.CreateNew();
 
-            // TODO update reference date
+            var d = newTodo.Repeat.Type == RepeatType.After ? DateTimeOffset.Now
+                : newTodo.Repeat.Type == RepeatType.Every ? newTodo.ReferenceDate.Value
+                : throw new NotImplementedException();
+
+            var c = newTodo.Repeat.Count;
+            var u = newTodo.Repeat.Unit;
+            var newReferenceDate = 
+                u == RepeatUnit.Day ? d.AddDays(c)
+                : u == RepeatUnit.Week ? d.AddDays(c * 7)
+                : u == RepeatUnit.Month ? d.AddMonths(c)
+                : u == RepeatUnit.Year ? d.AddYears(c)
+                : throw new NotImplementedException();
+
+            newTodo.ReferenceDate = newReferenceDate;
 
             _todoRepository.Upsert(newTodo);
         }
