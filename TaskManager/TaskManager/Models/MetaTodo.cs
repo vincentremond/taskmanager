@@ -1,4 +1,6 @@
-﻿namespace TaskManager.Models
+﻿using System;
+
+namespace TaskManager.Models
 {
     public class MetaTodo : Todo
     {

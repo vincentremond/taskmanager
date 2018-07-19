@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using TaskManager.Contract.Business;
@@ -80,6 +81,7 @@ namespace TaskManager.ViewModel.Builder
             {
                 TodoId = todo.TodoId,
                 Title = todo.Title,
+                ReferenceDate = todo.ReferenceDate,
                 Complexity = todo.Complexity,
                 Description = todo.Description,
                 ContextId = todo.Context?.ContextId,
@@ -106,6 +108,7 @@ namespace TaskManager.ViewModel.Builder
             var context = _contextBusiness.Get(model.ContextId);
             var project = _projectBusiness.Get(model.ProjectId);
             todo.Title = model.Title;
+            todo.ReferenceDate = model.ReferenceDate;
             todo.Complexity = model.Complexity;
             todo.Description = model.Description;
             todo.Context = context;
