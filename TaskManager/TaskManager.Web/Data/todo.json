@@ -378,5 +378,20 @@
     "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
     "Url": null,
     "Repeat": null
+  },
+  {
+    "TodoId": "01a29bb4be684a89b4f85333ea9ed8ee",
+    "Completed": false,
+    "Score": 0,
+    "Title": "Reference date has effect on meta score",
+    "ReferenceDate": "2018-07-19T00:00:00+02:00",
+    "Complexity": 120,
+    "DateCreated": "2018-07-19T16:50:21.4249407+02:00",
+    "DateModified": "2018-07-19T16:50:52.9754231+02:00",
+    "Description": null,
+    "ContextId": "09f0c993f62342a486f889310b8de858",
+    "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
+    "Url": null,
+    "Repeat": null
   }
 ]
