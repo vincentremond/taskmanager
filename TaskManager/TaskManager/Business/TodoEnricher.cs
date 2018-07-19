@@ -42,6 +42,11 @@ namespace TaskManager.Business
                 return false;
             }
 
+            if (!todo.ReferenceDate.HasValue || todo.ReferenceDate.Value == default)
+            {
+                return false;
+            }
+
             return true;
         }
     }
