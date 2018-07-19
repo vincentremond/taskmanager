@@ -2,6 +2,7 @@
 
 namespace TaskManager.Models
 {
+    [Serializable]
     public class Context
     {
         public string ContextId { get; set; }

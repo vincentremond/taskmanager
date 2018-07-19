@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace TaskManager.Contract.ViewModel.Model.Todo
@@ -12,6 +11,8 @@ namespace TaskManager.Contract.ViewModel.Model.Todo
         {
             public IEnumerable<SelectListItem> Contexts { get; set; }
             public IEnumerable<SelectListItem> Projects { get; set; }
+            public IEnumerable<SelectListItem> RepeatTypes { get; set; }
+            public IEnumerable<SelectListItem> RepeatUnits { get; set; }
         }
     }
 }
