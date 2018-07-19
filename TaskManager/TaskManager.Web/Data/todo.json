@@ -10,7 +10,8 @@
     "Description": null,
     "ContextId": "09f0c993f62342a486f889310b8de858",
     "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
-    "Url": null
+    "Url": null,
+    "Repeat": null
   },
   {
     "TodoId": "2ef4ddc4117646f4a3c4937a74ee6787",
@@ -23,7 +24,8 @@
     "Description": null,
     "ContextId": null,
     "ProjectId": null,
-    "Url": null
+    "Url": null,
+    "Repeat": null
   },
   {
     "TodoId": "cb3ca4572e77410ea1e223a9f59a53c0",
@@ -36,7 +38,8 @@
     "Description": null,
     "ContextId": null,
     "ProjectId": null,
-    "Url": null
+    "Url": null,
+    "Repeat": null
   },
   {
     "TodoId": "4e9fa46ab8374cbf83887c3d495afdf0",
@@ -49,7 +52,8 @@
     "Description": null,
     "ContextId": "09f0c993f62342a486f889310b8de858",
     "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
-    "Url": "javascript:alert('yay!');"
+    "Url": "javascript:alert('yay!');",
+    "Repeat": null
   },
   {
     "TodoId": "07f92c09d7424c30a0512bcff62ef6d7",
@@ -62,7 +66,8 @@
     "Description": null,
     "ContextId": "09f0c993f62342a486f889310b8de858",
     "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
-    "Url": null
+    "Url": null,
+    "Repeat": null
   },
   {
     "TodoId": "4e6c106cb2a245b1abffeffda244791d",
@@ -75,7 +80,8 @@
     "Description": null,
     "ContextId": "09f0c993f62342a486f889310b8de858",
     "ProjectId": null,
-    "Url": null
+    "Url": null,
+    "Repeat": null
   },
   {
     "TodoId": "d0e33314ec1d4e45a2e32cba9ce5bb46",
@@ -88,7 +94,8 @@
     "Description": "Je suis une description.",
     "ContextId": null,
     "ProjectId": null,
-    "Url": null
+    "Url": null,
+    "Repeat": null
   },
   {
     "TodoId": "a75ea1451c314ff9bb479eebc8476a5b",
@@ -101,7 +108,8 @@
     "Description": null,
     "ContextId": "09f0c993f62342a486f889310b8de858",
     "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
-    "Url": null
+    "Url": null,
+    "Repeat": null
   },
   {
     "TodoId": "c16aa348538f4f4a9d945c93de48e6b2",
@@ -114,7 +122,8 @@
     "Description": null,
     "ContextId": "09f0c993f62342a486f889310b8de858",
     "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
-    "Url": null
+    "Url": null,
+    "Repeat": null
   },
   {
     "TodoId": "b142fa5bc22044e68c26e4a913452d22",
@@ -127,7 +136,8 @@
     "Description": null,
     "ContextId": null,
     "ProjectId": null,
-    "Url": null
+    "Url": null,
+    "Repeat": null
   },
   {
     "TodoId": "60708a3b06d44c09a534178d3c7c08e3",
@@ -140,7 +150,8 @@
     "Description": null,
     "ContextId": null,
     "ProjectId": null,
-    "Url": null
+    "Url": null,
+    "Repeat": null
   },
   {
     "TodoId": "d4dfcbade72c4a37b1bd5eb67d16aca4",
@@ -153,7 +164,8 @@
     "Description": null,
     "ContextId": null,
     "ProjectId": null,
-    "Url": null
+    "Url": null,
+    "Repeat": null
   },
   {
     "TodoId": "a9822a57201043329034b00f09feee80",
@@ -166,7 +178,8 @@
     "Description": null,
     "ContextId": null,
     "ProjectId": null,
-    "Url": null
+    "Url": null,
+    "Repeat": null
   },
   {
     "TodoId": "e7af9847a6734e1082268011f4f93dc5",
@@ -179,7 +192,8 @@
     "Description": null,
     "ContextId": null,
     "ProjectId": null,
-    "Url": null
+    "Url": null,
+    "Repeat": null
   },
   {
     "TodoId": "a4b208cdbea442f68fcf453b2fb683da",
@@ -192,20 +206,22 @@
     "Description": null,
     "ContextId": null,
     "ProjectId": null,
-    "Url": null
+    "Url": null,
+    "Repeat": null
   },
   {
     "TodoId": "ab4f4d36927d41b09732ac015f8b3114",
-    "Completed": false,
+    "Completed": true,
     "Score": 2,
     "Title": "Reference date",
     "Complexity": 240,
     "DateCreated": "2018-07-16T15:52:29.4970398+02:00",
-    "DateModified": "2018-07-17T16:26:41.9040091+02:00",
+    "DateModified": "2018-07-19T14:20:42.2374998+02:00",
     "Description": null,
     "ContextId": "09f0c993f62342a486f889310b8de858",
     "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
-    "Url": null
+    "Url": null,
+    "Repeat": null
   },
   {
     "TodoId": "5c11fba056104bbd925a0c75f868c3e5",
@@ -218,7 +234,8 @@
     "Description": null,
     "ContextId": "09f0c993f62342a486f889310b8de858",
     "ProjectId": null,
-    "Url": null
+    "Url": null,
+    "Repeat": null
   },
   {
     "TodoId": "30dfa66b84584e4c93d6a7d7838b901a",
@@ -227,11 +244,16 @@
     "Title": "Todo can reppeat",
     "Complexity": 120,
     "DateCreated": "2018-07-17T15:53:52.6333171+02:00",
-    "DateModified": "2018-07-17T16:25:55.0224993+02:00",
+    "DateModified": "2018-07-19T14:32:45.9385422+02:00",
     "Description": null,
     "ContextId": "09f0c993f62342a486f889310b8de858",
     "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
-    "Url": null
+    "Url": null,
+    "Repeat": {
+      "Type": "Every",
+      "Count": 1,
+      "Unit": "Week"
+    }
   },
   {
     "TodoId": "1f538cf5f1c04ff9bc5932d2bac2105a",
@@ -244,6 +266,7 @@
     "Description": null,
     "ContextId": "09f0c993f62342a486f889310b8de858",
     "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
-    "Url": null
+    "Url": null,
+    "Repeat": null
   }
 ]

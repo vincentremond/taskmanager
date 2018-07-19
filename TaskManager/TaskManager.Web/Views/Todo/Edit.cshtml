@@ -1,7 +1,7 @@
 ﻿@model TaskManager.Contract.ViewModel.Model.Todo.EditViewModel
 
 @{
-    ViewData["Title"] = "Edit";
+  ViewData["Title"] = "Edit";
 }
 
 <h2>Edit</h2>
@@ -9,51 +9,76 @@
 <h4>Edit</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit" as>
-            <input type="hidden" asp-for="TodoId" />
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Complexity" class="control-label"></label>
-                <input asp-for="Complexity" class="form-control" />
-                <span asp-validation-for="Complexity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Url" class="control-label"></label>
-                <input asp-for="Url" class="form-control" />
-                <span asp-validation-for="Url" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <textarea asp-for="Description" class="form-control"></textarea>
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ContextId" class="control-label"></label>
-                <select asp-for="ContextId" asp-items="Model.ViewData.Contexts" class="form-control"></select>
-                <span asp-validation-for="ContextId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjectId" class="control-label"></label>
-                <select asp-for="ProjectId" asp-items="Model.ViewData.Projects" class="form-control"></select>
-                <span asp-validation-for="ProjectId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </form>
-    </div>
+  <div class="col-md-4">
+    <form asp-action="Edit" as>
+      <input type="hidden" asp-for="TodoId" />
+      <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+      <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="Complexity" class="control-label"></label>
+        <input asp-for="Complexity" class="form-control" />
+        <span asp-validation-for="Complexity" class="text-danger"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="Url" class="control-label"></label>
+        <input asp-for="Url" class="form-control" />
+        <span asp-validation-for="Url" class="text-danger"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="ContextId" class="control-label"></label>
+        <select asp-for="ContextId" asp-items="Model.ViewData.Contexts" class="form-control"></select>
+        <span asp-validation-for="ContextId" class="text-danger"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="ProjectId" class="control-label"></label>
+        <select asp-for="ProjectId" asp-items="Model.ViewData.Projects" class="form-control"></select>
+        <span asp-validation-for="ProjectId" class="text-danger"></span>
+      </div>
+
+      <div class="form-group">
+        <label asp-for="RepeatType" class="control-label"></label>
+        <div class="input input-group-btn" data-toggle="buttons">
+          <label class="btn btn-primary"><input type="radio" asp-for="RepeatType" value="None" />None</label>
+          <label class="btn btn-primary"><input type="radio" asp-for="RepeatType" value="After" />After</label>
+          <label class="btn btn-primary"><input type="radio" asp-for="RepeatType" value="Every" />Every</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label asp-for="RepeatCount" class="control-label"></label>
+        <input type="number" asp-for="RepeatCount" />
+      </div>
+
+      <div class="form-group">
+        <label asp-for="RepeatUnit" class="control-label"></label>
+        <div class="input-group-btn" data-toggle="buttons">
+          <label class="btn btn-primary"><input type="radio" asp-for="RepeatUnit" value="Day" />Day</label>
+          <label class="btn btn-primary"><input type="radio" asp-for="RepeatUnit" value="Week" />Week</label>
+          <label class="btn btn-primary"><input type="radio" asp-for="RepeatUnit" value="Month" />Month</label>
+          <label class="btn btn-primary"><input type="radio" asp-for="RepeatUnit" value="Year" />Year</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-default" />
+      </div>
+    </form>
+  </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+  <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+  @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
