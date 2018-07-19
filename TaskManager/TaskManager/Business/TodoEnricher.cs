@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
+using AutoMapper.Mappers;
 using TaskManager.Contract.Business;
 using TaskManager.Models;
 
@@ -16,10 +18,26 @@ namespace TaskManager.Business
         public MetaTodo Enrich(Todo todo)
         {
             var result = _mapper.Map<MetaTodo>(todo);
-            result.MetaScore = 1M * todo.Score - todo.Complexity / 60M;
             result.IsDraft = !HasMandatoryFields(todo);
+            result.MetaScore = GetMetaScore(result);
             return result;
         }
+
+        private decimal GetMetaScore(MetaTodo todo)
+        {
+            if (todo.IsDraft)
+            {
+                return 0;
+            }
+
+            var days = (decimal)(todo.ReferenceDate.Value - DateTimeOffset.Now).TotalDays;
+
+            return 1M * todo.Score
+                   - todo.Complexity / 60M
+                   - days;
+                ;
+        }
+
         private bool HasMandatoryFields(Todo todo)
         {
             if (string.IsNullOrWhiteSpace(todo.Title))
