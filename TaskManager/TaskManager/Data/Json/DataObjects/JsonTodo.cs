@@ -8,6 +8,7 @@ namespace TaskManager.Data.Json.DataObjects
         public bool Completed { get; set; }
         public int Score { get; set; }
         public string Title { get; set; }
+        public DateTimeOffset? ReferenceDate { get; set; }
         public int Complexity { get; set; }
         public DateTimeOffset DateCreated { get; set; }
         public DateTimeOffset DateModified { get; set; }
