@@ -226,13 +226,13 @@
   },
   {
     "TodoId": "ab4f4d36927d41b09732ac015f8b3114",
-    "Completed": false,
+    "Completed": true,
     "Score": 4,
     "Title": "Reference date",
     "ReferenceDate": "2018-07-19T00:00:00+02:00",
     "Complexity": 240,
     "DateCreated": "2018-07-16T15:52:29.4970398+02:00",
-    "DateModified": "2018-07-19T14:13:46.2531664+02:00",
+    "DateModified": "2018-07-19T16:48:34.6176163+02:00",
     "Description": null,
     "ContextId": "09f0c993f62342a486f889310b8de858",
     "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
@@ -256,21 +256,21 @@
   },
   {
     "TodoId": "30dfa66b84584e4c93d6a7d7838b901a",
-    "Completed": false,
+    "Completed": true,
     "Score": 1,
     "Title": "Todo can reppeat",
     "ReferenceDate": "2018-07-20T00:00:00+02:00",
     "Complexity": 120,
     "DateCreated": "2018-07-17T15:53:52.6333171+02:00",
-    "DateModified": "2018-07-19T14:13:17.6899286+02:00",
+    "DateModified": "2018-07-19T16:48:50.4059039+02:00",
     "Description": null,
     "ContextId": "09f0c993f62342a486f889310b8de858",
     "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
     "Url": null,
     "Repeat": {
-      "Type": "After",
+      "Type": "Every",
       "Count": 2,
-      "Unit": "Week"
+      "Unit": "Day"
     }
   },
   {
@@ -325,5 +325,58 @@
       "Count": 2,
       "Unit": "Week"
     }
+  },
+  {
+    "TodoId": "ba8ea8aa90a641bfb2987b8114943bc5",
+    "Completed": true,
+    "Score": 1,
+    "Title": "Todo can reppeat",
+    "ReferenceDate": "2018-07-22T00:00:00+02:00",
+    "Complexity": 120,
+    "DateCreated": "2018-07-19T16:48:50.402785+02:00",
+    "DateModified": "2018-07-19T16:49:01.5887847+02:00",
+    "Description": null,
+    "ContextId": "09f0c993f62342a486f889310b8de858",
+    "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
+    "Url": null,
+    "Repeat": {
+      "Type": "Every",
+      "Count": 2,
+      "Unit": "Day"
+    }
+  },
+  {
+    "TodoId": "96fad25b818444c5b9ef507eaeefb1b9",
+    "Completed": true,
+    "Score": 1,
+    "Title": "Todo can reppeat",
+    "ReferenceDate": "2018-07-24T00:00:00+02:00",
+    "Complexity": 120,
+    "DateCreated": "2018-07-19T16:49:01.5829989+02:00",
+    "DateModified": "2018-07-19T16:49:14.441833+02:00",
+    "Description": null,
+    "ContextId": "09f0c993f62342a486f889310b8de858",
+    "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
+    "Url": null,
+    "Repeat": {
+      "Type": "Every",
+      "Count": 2,
+      "Unit": "Week"
+    }
+  },
+  {
+    "TodoId": "3a2613debd06455495c69ee4b44c5f59",
+    "Completed": false,
+    "Score": 1,
+    "Title": "Todo can reppeat",
+    "ReferenceDate": "2018-08-07T00:00:00+02:00",
+    "Complexity": 120,
+    "DateCreated": "2018-07-19T16:49:14.4397341+02:00",
+    "DateModified": "2018-07-19T16:49:21.0473675+02:00",
+    "Description": null,
+    "ContextId": "09f0c993f62342a486f889310b8de858",
+    "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
+    "Url": null,
+    "Repeat": null
   }
 ]

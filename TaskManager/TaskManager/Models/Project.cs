@@ -2,6 +2,7 @@
 
 namespace TaskManager.Models
 {
+    [Serializable]
     public class Project
     {
         public string ProjectId { get; set; }

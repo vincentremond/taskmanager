@@ -2,6 +2,7 @@
 
 namespace TaskManager.Models
 {
+    [Serializable]
     public class Todo
     {
         public string TodoId { get; set; }
