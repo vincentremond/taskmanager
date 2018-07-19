@@ -1,7 +1,4 @@
 ﻿using System;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using TaskManager.Models;
 
 namespace TaskManager.Data.Json.DataObjects
 {

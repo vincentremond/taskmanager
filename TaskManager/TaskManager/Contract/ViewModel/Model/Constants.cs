@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TaskManager.Contract.ViewModel.Model
+﻿namespace TaskManager.Contract.ViewModel.Model
 {
   public class Constants
   {

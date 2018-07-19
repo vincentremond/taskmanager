@@ -1,4 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using TaskManager.Contract.Business;
@@ -104,8 +107,26 @@ namespace TaskManager.ViewModel.Builder
             {
                 Contexts = new SelectList(_contextBusiness.GetAll(), "ContextId", "Title", edit.ContextId),
                 Projects = new SelectList(_projectBusiness.GetAll(), "ProjectId", "Title", edit.ProjectId),
+                RepeatTypes = GetEnumSelectList(edit.RepeatType),
+                RepeatUnits = GetEnumSelectList(edit.RepeatUnit),
             };
             return newModel;
+        }
+
+        private static IEnumerable GetEnumValues<T>()
+        {
+            var values = Enum.GetValues(typeof(T));
+            var items = new List<KeyValuePair<string, string>>(values.Length);
+            foreach (var i in values)
+            {
+                items.Add(new KeyValuePair<string, string>(i.ToString(), Enum.GetName(typeof(T), i)));
+            }
+            return items;
+        }
+
+        private static SelectList GetEnumSelectList<T>(T value)
+        {
+            return new SelectList(GetEnumValues<T>(), "Key", "Value", value);
         }
 
         public void Update(Edit model)

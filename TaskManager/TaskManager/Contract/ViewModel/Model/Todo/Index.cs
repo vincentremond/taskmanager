@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using TaskManager.Models;
 
 namespace TaskManager.Contract.ViewModel.Model.Todo
 {
