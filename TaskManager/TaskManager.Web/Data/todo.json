@@ -244,14 +244,14 @@
     "Title": "Todo can reppeat",
     "Complexity": 120,
     "DateCreated": "2018-07-17T15:53:52.6333171+02:00",
-    "DateModified": "2018-07-19T14:32:45.9385422+02:00",
+    "DateModified": "2018-07-19T15:21:38.4131121+02:00",
     "Description": null,
     "ContextId": "09f0c993f62342a486f889310b8de858",
     "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
     "Url": null,
     "Repeat": {
-      "Type": "Every",
-      "Count": 1,
+      "Type": "After",
+      "Count": 2,
       "Unit": "Week"
     }
   },
@@ -268,5 +268,23 @@
     "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
     "Url": null,
     "Repeat": null
+  },
+  {
+    "TodoId": "9fa15f2a0d6d49f7858654caf0a27169",
+    "Completed": true,
+    "Score": 1,
+    "Title": "Todo can reppeat",
+    "Complexity": 120,
+    "DateCreated": "2018-07-17T15:53:52.6333171+02:00",
+    "DateModified": "2018-07-19T16:15:53.1829317+02:00",
+    "Description": null,
+    "ContextId": "09f0c993f62342a486f889310b8de858",
+    "ProjectId": "3303752d4ac4422fafb0adbc4d56a300",
+    "Url": null,
+    "Repeat": {
+      "Type": "After",
+      "Count": 2,
+      "Unit": "Week"
+    }
   }
 ]

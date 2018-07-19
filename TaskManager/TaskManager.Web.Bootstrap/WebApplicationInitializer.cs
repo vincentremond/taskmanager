@@ -2,8 +2,10 @@
 using TaskManager.Business;
 using TaskManager.Contract.Business;
 using TaskManager.Contract.Data;
+using TaskManager.Contract.Utilities;
 using TaskManager.Contract.ViewModel.Builder;
 using TaskManager.Data.Json;
+using TaskManager.Utilities;
 using TaskManager.ViewModel.Builder;
 
 namespace TaskManager.Web.Bootstrap
@@ -15,6 +17,7 @@ namespace TaskManager.Web.Bootstrap
             services.AddBusiness();
             services.AddViewModel();
             services.AddDataJson();
+            services.AddUtilities();
         }
 
         static void AddBusiness(this IServiceCollection services)
@@ -37,6 +40,10 @@ namespace TaskManager.Web.Bootstrap
             services.AddTransient<ITodoRepository, JsonTodoRepository>();
             services.AddTransient<IContextRepository, JsonContextRepository>();
             services.AddTransient<IProjectRepository, JsonProjectRepository>();
+        }
+        static void AddUtilities(this IServiceCollection services)
+        {
+            services.AddTransient<IIdentifierProvider, IdentifierProvider>();
         }
     }
 }

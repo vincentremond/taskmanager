@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using TaskManager.Contract.Business;
+using TaskManager.Contract.Utilities;
 using TaskManager.Contract.ViewModel.Builder;
 using TaskManager.Contract.ViewModel.Model.Context;
 using TaskManager.Models;
@@ -11,10 +12,14 @@ namespace TaskManager.ViewModel.Builder
     public class ContextViewModelBuilder : IContextViewModelBuilder
     {
         private readonly IContextBusiness _contextBusiness;
+        private readonly IIdentifierProvider _identifierProvider;
 
-        public ContextViewModelBuilder(IContextBusiness contextBusiness)
+        public ContextViewModelBuilder(IContextBusiness contextBusiness
+            , IIdentifierProvider identifierProvider
+            )
         {
             _contextBusiness = contextBusiness;
+            _identifierProvider = identifierProvider;
         }
 
         public Index Index()
@@ -66,7 +71,7 @@ namespace TaskManager.ViewModel.Builder
         {
             var context = new Context
             {
-                ContextId = Guid.NewGuid().ToString("N"),
+                ContextId = _identifierProvider.CreateNew(),
                 Title = model.Title,
                 Color = model.Color,
                 DateCreated = DateTimeOffset.Now,

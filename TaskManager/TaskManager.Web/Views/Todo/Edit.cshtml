@@ -45,27 +45,17 @@
       </div>
 
       <div class="form-group">
-        <label asp-for="RepeatType" class="control-label"></label>
-        <div class="input input-group-btn" data-toggle="buttons">
-          <label class="btn btn-primary"><input type="radio" asp-for="RepeatType" value="None" />None</label>
-          <label class="btn btn-primary"><input type="radio" asp-for="RepeatType" value="After" />After</label>
-          <label class="btn btn-primary"><input type="radio" asp-for="RepeatType" value="Every" />Every</label>
-        </div>
-      </div>
+        <label class="control-label">Repeat</label>
+        <br/>
+        <select asp-for="RepeatType" asp-items="@Model.ViewData.RepeatTypes"></select>
+        <span asp-validation-for="RepeatType" class="text-danger"></span>
 
-      <div class="form-group">
-        <label asp-for="RepeatCount" class="control-label"></label>
         <input type="number" asp-for="RepeatCount" />
-      </div>
+        <span asp-validation-for="RepeatCount" class="text-danger"></span>
 
-      <div class="form-group">
-        <label asp-for="RepeatUnit" class="control-label"></label>
-        <div class="input-group-btn" data-toggle="buttons">
-          <label class="btn btn-primary"><input type="radio" asp-for="RepeatUnit" value="Day" />Day</label>
-          <label class="btn btn-primary"><input type="radio" asp-for="RepeatUnit" value="Week" />Week</label>
-          <label class="btn btn-primary"><input type="radio" asp-for="RepeatUnit" value="Month" />Month</label>
-          <label class="btn btn-primary"><input type="radio" asp-for="RepeatUnit" value="Year" />Year</label>
-        </div>
+        <select asp-for="RepeatUnit" asp-items="@Model.ViewData.RepeatUnits"></select>
+        <span asp-validation-for="RepeatUnit" class="text-danger"></span>
+
       </div>
 
       <div class="form-group">

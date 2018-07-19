@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using TaskManager.Contract.Business;
+using TaskManager.Contract.Utilities;
 using TaskManager.Contract.ViewModel.Builder;
 using TaskManager.Contract.ViewModel.Model.Project;
 using TaskManager.Models;
@@ -11,10 +12,14 @@ namespace TaskManager.ViewModel.Builder
     public class ProjectViewModelBuilder : IProjectViewModelBuilder
     {
         private readonly IProjectBusiness _projectBusiness;
+        private readonly IIdentifierProvider _identifierProvider;
 
-        public ProjectViewModelBuilder(IProjectBusiness projectBusiness)
+        public ProjectViewModelBuilder(IProjectBusiness projectBusiness
+            , IIdentifierProvider identifierProvider
+            )
         {
             _projectBusiness = projectBusiness;
+            _identifierProvider = identifierProvider;
         }
 
         public Index Index()
@@ -66,7 +71,7 @@ namespace TaskManager.ViewModel.Builder
         {
             var project = new Project
             {
-                ProjectId = Guid.NewGuid().ToString("N"),
+                ProjectId = _identifierProvider.CreateNew(),
                 Title = model.Title,
                 Color = model.Color,
                 DateCreated = DateTimeOffset.Now,
